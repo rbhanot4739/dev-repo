@@ -18,45 +18,19 @@
 
 <body>
 
-{#Navbar #}
 
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-        <a href="{% url 'post-home' %}" class="navbar-brand">Home Page</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a href="#" class="nav-link nav-item">Posts</a>
-                </li>
-                <li class="nav-item"><a href="#" class="nav-link nav-item">About</a></li>
-                <li class="nav-item"><a href="#" class="nav-link nav-item">User Home</a>
-                </li>
-            </ul>
-        </div>
-        <div class="collapse navbar-collapse" id="navitems">
-            <ul class="navbar-nav ml-md-auto">
-                <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
-                <li class="nav-item"><a href="{% url 'register-user' %}" class="nav-link">SignUp</a></li>
-                <li class="nav-item"><a href="{% url 'post-create' %}" class="nav-link">Create Post</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
+{% include "nav-header.html" %}
 
 <div class="row justify-content-start justify-content-sm-around m-3">
     <div class="col-6 col-offset-3">
-        {% block header %}
-        {% endblock header %}
+        <h4>{% block header %} {% endblock header %}</h4>
     </div>
 </div>
 
+
 <div class="row justify-content-around">
     <div class="col-6 col-offset-3">
+        {% include "messages.html" %}
         {% block body %}
         {% endblock body %}
     </div>

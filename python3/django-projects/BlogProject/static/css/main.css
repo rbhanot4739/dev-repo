@@ -1,5 +1,6 @@
-.navbar {
+.nav-bg {
     background-color: #2f2f47;
+    color: #6c757d;
 }
 
 .post-container {
@@ -13,7 +14,7 @@
 
 .right-legend {
     border: 1px solid gray;
-    background-color: #fed8c4;
+    background-color: #c3e0fe;
     padding: 10px;
     word-wrap: normal;
 }

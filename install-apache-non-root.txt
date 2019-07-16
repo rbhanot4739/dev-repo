@@ -1,0 +1,14 @@
+Installing apache as Non-root user
+
+1. Download apache/apr/apr-util and pcre source tar files
+
+2. Extract them.
+
+3. cd apr-1.7.0 && ./configure --prefix=/spare/local/apache/httpd-2.4.39/srclib/apr-1.7.0 && make && make install && cd ..
+
+4. cd apr-util-1.6.1 && ./configure --prefix=/spare/local/apache/httpd-2.4.39/apr-util-1.6.1 --with-ldap --with-apr=/spare/local/apache/httpd-2.4.39/srclib/apr-1.7.0 && make && make install & cd ..
+
+5. cd pcre2-10.21 && ./configure --prefix=/spare/local/apache/httpd-2.4.39/pcre/pcre2-10.21 && make && make install && cd ..
+
+6. cd httpd-2.4.39 && ./configure --prefix=/spare/local/apache/httpd-2.4.39 --with-apr=/spare/local/apache/httpd-2.4.39/srclib/apr-1.7.0/ --with-apr-util=/spare/local/apache/httpd-2.4.39/apr-util-1.6.1/ --with-pcre=/spare/local/apache/httpd-2.4.39/pcre/pcre2-10.21/bin/pcre2-config && make && make install
+

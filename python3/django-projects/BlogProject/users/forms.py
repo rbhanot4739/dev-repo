@@ -1,8 +1,15 @@
+from django.contrib.auth.forms import UserCreationForm
+from django import forms
+
 from .models import CustomUser
-from django.forms import ModelForm
 
 
-class UserRegiterForm(ModelForm):
+class UserSignUpForm(UserCreationForm):
+    description = forms.CharField(widget=forms.Textarea(attrs={'cols': 3, 'rows': 4}))
+
     class Meta:
         model = CustomUser
-        fields = ['username', 'email', 'first_name', 'last_name', 'password']
+        fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2', 'description']
+        # widgets = {
+        #     'description': forms.Textarea(attrs={'rows': 3})
+        # }

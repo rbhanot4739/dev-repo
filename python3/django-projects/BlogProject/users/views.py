@@ -1,23 +1,19 @@
-from django.shortcuts import render
-from django.contrib.auth.forms import UserCreationForm
-from django.http import HttpResponse
 from django.contrib import messages
-from .forms import UserRegiterForm
+from django.shortcuts import redirect, render
+
+from .forms import UserSignUpForm
 
 
 # Create your views here.
 
 
 def register(request):
-    form = UserRegiterForm()
+    form = UserSignUpForm()
     if request.POST:
-        form = UserRegiterForm(request.POST)
+        form = UserSignUpForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'User created')
-            return HttpResponse("Valid Form")
-    return render(request, "users/create_user.html", {"form": form})
+            return redirect('login')
+    return render(request, "users/register.html", {"form": form})
 
-
-def login(request):
-    pass

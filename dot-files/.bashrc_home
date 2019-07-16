@@ -1,0 +1,26 @@
+function from_git () {
+cd ~/python-dotfiles/dot-files/
+for i in .bashrc .work_bashrc .zshrc .work.zshrc .home.zshrc home.bashrc local_machine_settings.rc .tmux.conf .pythonrc .ideavimrc
+do
+cp $i ~/
+done
+cp -arv ~/python-dotfiles/bash/dev-tmux ~/.
+cp -arv ~/python-dotfiles/dot-files/nvim/ ~/.config/nvim/
+cp -arv ~/python-dotfiles/dot-files/tmux/ ~/.tmux/
+cd ~/
+}
+
+function to_git () {
+cd ~/
+for i in .bashrc .work_bashrc .zshrc .work.zshrc .home.zshrc home.bashrc local_machine_settings.rc .tmux.conf .pythonrc .ideavimrc
+do
+cp -arv $i ~/python-dotfiles/dot-files/
+done
+cp -arv ~/dev-tmux ~/python-dotfiles/bash/
+cp -arv ~/.config/nvim/*.vim ~/python-dotfiles/dot-files/nvim/
+cp -arv ~/.config/nvim/ftplugin/*.vim ~/python-dotfiles/dot-files/nvim/ftplugin/
+cp -arv ~/.tmux/tmuxline.vim ~/python-dotfiles/dot-files/tmux/
+}
+
+alias vpn="~/tools/forticlientsslvpn/64bit/forticlientsslvpn_cli --server vpn.tower-research.com:443 --vpnuser rbhanot"
+ofc='rbhanotlinux.gurg-off.tower-research.com'

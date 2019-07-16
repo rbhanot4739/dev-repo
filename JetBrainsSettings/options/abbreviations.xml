@@ -1,0 +1,10 @@
+<application>
+  <component name="AbbreviationManager">
+    <abbreviations>
+      <action id="RecentFiles" />
+      <action id="FileStructurePopup">
+        <abbreviation name="fs" />
+      </action>
+    </abbreviations>
+  </component>
+</application>

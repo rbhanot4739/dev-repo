@@ -1,0 +1,71 @@
+body {
+  background-color: #232323;
+  font-size: 16px;
+  font-family: Franklin Gothic Book;
+  margin: 0
+}
+
+.container {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.square {
+  width: 30%;
+  background-color: red;
+  padding-top: 30%;
+  float: left;
+  margin: 1.66%;
+  border-radius: 25px;
+  transition: background 0.4s;
+}
+
+.header {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: steelblue;
+  /* margin: 0; */
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+#colDisplay {
+  font-size: 2em;
+}
+
+#titlebar {
+  background: white;
+  text-align: center;
+  height: 30px;
+  color: black;
+  margin-bottom: 2px;
+}
+
+.selected {
+  background-color: steelblue;
+  color: white;
+}
+
+button {
+  background: white;
+  color: steelblue;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  height: 100%;
+  font-size: inherit;
+  transition: all 0.3s;
+  outline: none;
+}
+
+button:hover {
+  background-color: steelblue;
+  color: white;
+}
+
+#result {
+  display: inline-block;
+  width: 20%;
+  text-transform: uppercase;
+}

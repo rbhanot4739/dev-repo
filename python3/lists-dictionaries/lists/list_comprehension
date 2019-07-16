@@ -1,0 +1,32 @@
+list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+print("Original list is: ", list1)
+
+# A simple list comprehension
+
+list2 = [n ** 2 for n in list1]
+print("List2 is :", list2)
+
+# Nested list comprehension
+
+list3 = [(ltr, num) for ltr in 'abc' for num in range(3)]
+print("List3 is :", list3)
+
+# List comprehension with slicing
+
+str_list = ['Cap Amr', 'Iron Man', 'Batman', 'Superman']
+names = [n[:4] for n in str_list]
+print(names)
+
+# List comprehension with conditionals
+
+list4 = [n for n in list1 if n % 2 == 0]
+print("List4 is :", list4)
+
+list5 = [(x, y) for x in range(5) if x % 2 == 0 for y in range(5) if y % 2 == 1]
+print('List5 :', list5)
+
+# Nested list comprehension type 2
+
+list6 = [[(x, y) for x in range(5)] for y in range(5)]
+print('List6 :', list6)

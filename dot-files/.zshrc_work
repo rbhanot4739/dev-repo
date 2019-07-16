@@ -1,0 +1,46 @@
+LOCALHOST=$(hostname | awk -F. '{print $1"."$2}')
+MYPC="rbhanotlinux.gurg-off"
+
+PATH=$PATH:/usr/local/sbin/global:/usr/local/sbin/os
+cons() { nprocons -wh $@ ; }
+
+# Local machine settings
+if [ ${LOCALHOST} = $MYPC ]
+then
+
+	 [ -f ~/.local_settings_rc ] && source ~/.local_settings_rc
+
+	#export NVM_DIR="/spare/ssd/rbhanot/.nvm"
+	#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+	 alias cdrb="cd /spare/ssd/rbhanot-data"
+
+	# export DJANGO_SETTINGS_MODULE=towerportal.settings.local_settings
+	alias start-mysql-docker="sudo tdocker start sefo-images/mysql:5.7"
+	alias apache="/spare/local/apache/httpd-2.4.39/bin/apachectl"
+
+	 #PATH=$PATH:~/tools
+
+else
+
+	# Auto complete settings
+	autoload -Uz compinit
+	typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+	if [ $(date +'%j') != $updated_at ]; then
+		compinit -i
+	else
+		compinit -C -i
+	fi
+	zmodload -i zsh/complist
+
+	setopt auto_list # automatically list choices on ambiguous completion
+	setopt auto_menu # automatically use menu completion
+	setopt always_to_end # move cursor to end if word had one match
+	zstyle ':completion:*' menu select # select completions with arrow keys
+	zstyle ':completion:*' group-name '' # group results by category
+	zstyle ':completion:::::' completer _expand _complete _ignored _approximate # enable approximate matches for completion
+
+	bindkey '^[3;5~' delete-char
+	autoload -U colors && colors
+  PROMPT='%{%F{green}%}%n@%{%F{green}%}%2m: %{%F{yellow}%}%~ %{%f%}$ '
+fi

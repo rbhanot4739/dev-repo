@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load render_utils_common %}
+
+{% block body %}
+{% render_form form 'Register' %}
+
+    {% if messages %}
+        <ul class="messages">
+        {% for msg in messages %}
+        <li class="{% if msg.tag %} {{ msg.tag }} {% endif %}"></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load render_post_elements %}
+
+{% block header %}
+    <h2>List Posts</h2>
+{% endblock header %}
+
+{% block body %}
+
+    {% for row in obj %}
+        {% render_post_container row 'list' %}
+    {% endfor %}
+
+{% endblock body %}
+
+{% block legend %}
+    <div class="col-3 right-legend align-self-start mt-5">
+        <ul class="list-unstyled">
+            <li>Join the Site !</li>
+            <li>Login !</li>
+            <li>Blogs</li>
+            <li>Join the Site !</li>
+            <li>Login !</li>
+            <li>Blogs</li>
+        </ul>
+    </div>
+{% endblock legend %}

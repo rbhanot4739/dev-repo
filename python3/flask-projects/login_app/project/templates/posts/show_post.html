@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% from "_posts_jinja.html" import delete_post %}
+{% block body %}
+    <div class="container posts-container">
+        <div class="row">
+            <div class="col"><img class="rounded-circle post-image" src="{{ url_for('static', filename='profile_pics/'+post.author.profile_pic) }}" alt=""></div>
+            <div class="col">{{ post.author.username }}</div>
+            <div class="col">{{ post.creation_date }}</div>
+        </div>
+        <div class="row">
+            <h2>{{ post.title }}</h2>
+        </div>
+        <div class="posts-data">
+            <p>{{ post.description }}</p>
+        </div>
+        {% if current_user.is_authenticated %}
+            {% if current_user.username == post.author.username %}
+                <a class="btn btn-secondary btn-sm m-2" href="{{ url_for('posts.update_post', post_id=post.id) }}">Update</a>
+
+                {{ delete_post(post) }}
+
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}

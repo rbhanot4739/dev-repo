@@ -1,0 +1,6 @@
+<application>
+  <component name="JupyterSettings">
+    <option name="autoscrollFromSource" value="false" />
+    <option name="autoscrollToSource" value="false" />
+  </component>
+</application>

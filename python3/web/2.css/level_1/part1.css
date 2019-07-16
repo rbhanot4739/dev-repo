@@ -1,0 +1,32 @@
+body{
+  /*background-image: url(http://minetrip.com/wp-content/uploads/2017/05/leh1.jpg);*/
+  background: #b1c168;
+  background-repeat: repeat;
+}
+
+h2{
+  color: blue;
+}
+
+div{
+  background-color: rgb(229, 220, 220);
+  border-color: purple;
+  border-width: 2px;
+  border-style: dashed;
+}
+
+p{
+  color: purple;
+}
+
+span{
+  color: yellow;
+  background: brown;
+  border-color: blue;
+  border-width: 1px;
+  border-style: dotted;
+}
+
+ul{
+  color: orange;
+}

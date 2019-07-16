@@ -1,0 +1,11 @@
+<application>
+  <component name="GoSdkList">
+    <sdk-path>
+      <set>
+        <option value="" />
+        <option value="$USER_HOME$/tools/go" />
+        <option value="/spare/ssd/rbhanot/go" />
+      </set>
+    </sdk-path>
+  </component>
+</application>

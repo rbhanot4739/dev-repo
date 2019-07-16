@@ -1,0 +1,27 @@
+{% macro delete_post(post) %}
+
+    <button class="btn btn-sm btn-danger m-2" data-toggle="modal" data-target="#deleteModalCenter">Delete</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModalCenter" tabindex="-1" role="dialog" aria-labelledby="deleteModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLongTitle">Delete Post ?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete {{ post.title }} ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <form action="{{ url_for('posts.delete_post', post_id=post.id) }}" method="post">
+                        <input type="submit" name="Delete" id="deletepost" class="btn btn-danger" value="Delete">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

@@ -1,0 +1,16 @@
+{
+  "name": "abc",
+  "age": 48,
+  "reportees": [
+    {
+      "name": "xyz",
+      "age": 28,
+      "reportees": []
+    },
+    {
+      "name": "zzz",
+      "age": 15,
+      "reportees": []
+    }
+  ]
+}

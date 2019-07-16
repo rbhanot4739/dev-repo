@@ -1,0 +1,48 @@
+/* rem is relative to size of root element
+em is relative to size of parent element under which the element is nested.
+*/
+
+body {
+  border: 20px solid gray;
+  padding: 20px;
+  max-width: 800px;
+  width: 80%;
+  margin: 20px auto;
+  font-family: "Ubuntu", sans-serif;
+}
+
+h2 {
+  color: rgba(13, 39, 81, 0.7);
+  font-size: 2rem;
+}
+
+p {
+  color: #ce3015;
+}
+
+.date {
+  font-size: 1rem;
+  color: #4fb6e2;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+p:nth-of-type(2) {
+  padding-left: 10px;
+  border-left: 6px solid gray;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.div2 {
+  margin-top: 20px;
+}

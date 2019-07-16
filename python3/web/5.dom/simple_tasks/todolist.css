@@ -1,0 +1,15 @@
+.hovered {
+  color: blue
+}
+
+.clicked {
+  text-decoration: line-through;
+}
+
+/* li:hover {
+  color: red;
+}
+
+li:click {
+  color: yellow;
+} */

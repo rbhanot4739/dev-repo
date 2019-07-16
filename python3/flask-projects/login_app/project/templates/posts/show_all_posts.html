@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% from "_posts_jinja.html" import delete_post %}
+{% block body %}
+
+    {#    Pagination Code#}
+    {% for post in posts.items %}
+        <div class="container posts-container">
+            <div class="row posts-data">
+                <div class="col"><img class="rounded-circle post-image"
+                                      src="{{ url_for('static', filename='profile_pics/'+post.author.profile_pic) }}" alt=""></div>
+                <div class="col post-author">
+                    {% if current_user.username == post.author.username %}
+                        <a href="{{ url_for('user.profile', uname=post.author.username) }}">{{ post.author.username }}</a>
+                    {% else %}
+                        {{ post.author.username }}
+                    {% endif %}
+                </div>
+                <div class="col">{{ post.creation_date.strftime("%F") }}</div>
+            </div>
+            <hr>
+            <div class="row posts-data">
+                <h2><a href="{{ url_for('posts.show_post', post_id=post.id) }}">{{ post.title }}</a></h2>
+            </div>
+            <div class="row posts-data">
+                <p>{{ post.description }}</p>
+            </div>
+            {% if current_user.is_authenticated %}
+                {% if current_user.username == post.author.username %}
+
+                    {{ delete_post(post) }}
+                {% endif %}
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <!-- TODO: Make pagination look little better -->
+    {#  Page navigation bar #}
+    <div class="container">
+        <nav aria-label="">
+            <ul class="pagination">
+                {% for page in posts.iter_pages(left_edge=2, right_edge=1, left_current=1, right_current=2) %}
+                    {% if page %}
+                        {% if page == page_num %}
+                            <li class="page-item">
+                                <a class="btn btn-info disabled" href="{{ url_for('posts.show_all_posts', page=page) }}">{{ page }}</a>
+                            </li>
+                        {% else %}
+                            <a class="btn btn-outline-info" href="{{ url_for('posts.show_all_posts', page=page) }}">{{ page }}</a>
+                        {% endif %}
+                    {% else %}
+                        ...
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+
+    {#    <script src="static/js/posts.js"></script>#}
+{% endblock %}

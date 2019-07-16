@@ -1,0 +1,16 @@
+.container {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.circle {
+    height: 100px;
+    width: 100px;
+    border: 4px solid black;
+    border-radius: 50%;
+    background-color: grey;
+}
+
+table {
+    margin: auto;
+}

@@ -1,0 +1,23 @@
+.navbar {
+    background-color: #2f2f47;
+}
+
+.post-container {
+    border: 1px gray solid;
+    background-color: #e4eaff;
+    padding: 10px;
+    word-wrap: break-word;
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+}
+
+.right-legend {
+    border: 1px solid gray;
+    background-color: #fed8c4;
+    padding: 10px;
+    word-wrap: normal;
+}
+
+textarea {
+    width: 100%;
+}

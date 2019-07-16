@@ -1,0 +1,6 @@
+{% extends "base.html" %} {% block body %}
+<div class="jumbotron">
+  {% for item in obj.list_databases() %} {{ item }}
+  {% endfor %}
+</div>
+{% endblock %}

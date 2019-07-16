@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load render_utils_common %}
+
+{% block header %}
+    <h3>Create</h3>
+{% endblock %}
+
+{% block body %}
+{% render_form form 'Create' %}
+
+{% endblock body %}

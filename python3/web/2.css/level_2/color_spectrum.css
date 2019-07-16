@@ -1,0 +1,30 @@
+h2{
+  font-family: 'Titillium Web', sans-serif;
+  text-align: center;
+
+}
+
+td{
+  height: 300px;
+  width: 100px;
+  border: 2px solid white;
+}
+table{
+  margin: auto;
+}
+
+#cell1{
+  background: #50514F;
+}
+#cell2{
+  background: #F25F5C;
+}
+#cell3{
+  background: #FFE066;
+}
+#cell4{
+  background: #247BA0;
+}
+#cell5{
+  background: #70C1B3;
+}

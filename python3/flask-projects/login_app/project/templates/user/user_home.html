@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% from "_jinja_helpers.html" import flash_messages %}
+{% block body %}
+    <div>{{ flash_messages() }}</div>
+    <div class="jumbotron text-center">
+        {% if current_user.is_authenticated %}
+            <h5>Welcome {{ current_user.username }} !!</h5>
+        {% else %}
+            <h5>Please login or Signup !!</h5>
+        {% endif %}
+    </div>
+{% endblock %}
+

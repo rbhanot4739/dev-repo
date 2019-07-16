@@ -1,0 +1,22 @@
+td {
+  width: 120px;
+  height: 120px;
+  padding: 0;
+}
+
+.col1 {
+  border-right: 1px solid;
+}
+
+.col3 {
+  border-left: 1px solid;
+}
+
+.row2 {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+table {
+  margin: 50px auto;
+}

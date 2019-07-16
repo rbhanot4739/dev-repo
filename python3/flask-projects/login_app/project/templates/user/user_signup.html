@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% from "_jinja_helpers.html" import render_field %}
+{% from "_jinja_helpers.html" import render_button %}
+{% block body %}
+    <div class="container my-container d-flex justify-content-center align-items-center">
+        <form action="" method="POST" novalidate>
+            {{ form.hidden_tag() }}
+            <div class="form-group"> {{ render_field(form.username, class="form-control") }}</div>
+            <div class="form-group"> {{ render_field(form.email, class="form-control") }}</div>
+            <div class="form-group">{{ render_field(form.password, class="form-control") }}</div>
+            <div class="form-group">{{ render_field(form.confirm_password, class="form-control") }}</div>
+            {{ render_button(form.submit, class="btn btn-md btn-block") }}
+            <div class="row justify-content-center mt-3">
+                <small class="text-muted">Already have an account ? <a href="{{ url_for('user.login') }}">Log In</a></small>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,43 @@
+.my-container {
+    height: 100vh;
+}
+
+.navbar {
+    background-color: #293147;
+    color: white;
+}
+
+a {
+    color: #214de5;
+}
+
+.posts-container {
+    /*border: 1px gray solid;*/
+    background-color: #e4eaff;
+    width: 40%;
+    margin: 15px;
+    padding: auto;
+    position: relative;
+    left: 25%;
+    right: 25%;
+}
+
+.posts-data {
+    padding: 5px;
+}
+
+.form-control:focus {
+    border-color: #293147;
+    box-shadow: none;
+}
+
+.account-image {
+    height: 100px;
+    width: 100px;
+}
+
+.post-image {
+    height: 35px;
+    width: 35px;
+}
+

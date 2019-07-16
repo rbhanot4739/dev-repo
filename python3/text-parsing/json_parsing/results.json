@@ -1,0 +1,28 @@
+{
+  "name": "John",
+  "age": 48,
+  "reportees": [
+    {
+      "name": "Jamie",
+      "age": "38",
+      "reportees": [
+        {
+          "name": "Cal",
+          "age": 29,
+          "reportees": null
+        }
+      ]
+    },
+    {
+      "name": "Adam",
+      "age": "40",
+      "reportees": [
+        {
+          "name": "Smith",
+          "age": 27,
+          "reportees": null
+        }
+      ]
+    }
+  ]
+}

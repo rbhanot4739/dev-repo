@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            {#            <div class="col-xs-4 p-1"><img src="{{ current_user.set_avatar(36) }}" alt=""></div>#}
+            <div class="col-xs-4 p-1"><img class="rounded-circle account-image" src="{{ url_for('static', filename='profile_pics/'+current_user.profile_pic) }}" alt=""></div>
+            <div class="col-xs-8">{{ current_user.username }}</div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-*"> Last seen on : {{ current_user.last_seen.strftime('%F %T') }}</div>
+        </div>
+        {{ current_user.about_me }}
+        <div class="row justify-content-end">
+            <div class="col-xs- mx-auto"><a href="{{ url_for('user.edit_profile', user=current_user.username) }}">Edit Profile</a></div>
+        </div>
+        <hr>
+        {#    Paginaiton #}
+        {% for post in posts.items %}
+            <div class=""><img class="rounded-circle post-image" src="{{ url_for('static', filename='profile_pics/'+current_user.profile_pic) }}" alt="">{{ post.title }}
+            </div>
+            {#        <img src="{{ post.author.set_avatar(22) }}" alt=""> {{ post.title }}<br>#}
+            <div class="text-muted">{{ post.description }}</div>
+            <br>
+        {% endfor %}
+    </div>
+
+    {# Page navigation bar#}
+    <div class="container">
+        <nav>
+            <ul class="pagination">
+                {% for page in posts.iter_pages(left_edge=2, right_edge=1, left_current=1, right_current=2) %}
+                    {% if page %}
+                        {% if page == page_num %}
+                            <a class="btn btn-info" href="{{ url_for('user.profile', uname=current_user.username, page=page) }}">{{ page }}</a>
+                        {% else %}
+                            <a class="btn btn-outline-info" href="{{ url_for('user.profile', uname=current_user.username, page=page) }}">{{ page }}</a>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+        </nav>
+    </div>
+{% endblock %}

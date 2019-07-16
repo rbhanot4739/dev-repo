@@ -1,0 +1,5 @@
+Part 1 http://programeveryday.com/post/pytest-the-best-python-testing-module/
+Part 2 http://programeveryday.com/post/pytest-creating-and-using-fixtures-for-streamlined-testing/
+Part 3 http://programeveryday.com/post/pytest-more-advanced-features-for-easier-testing/
+
+https://docs.pytest.org/en/latest/fixture.html

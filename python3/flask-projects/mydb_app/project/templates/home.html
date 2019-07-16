@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <form method="POST" novalidate>
+                {{ form.hidden_tag() }}
+                <p class="lead">Enter connection details below</p>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            {{ form.hostname.label }} {{ form.hostname(class="form-control", placeholder="Enter FQDN") }}
+                            {% for error in form.hostname.errors %}
+                                <div>
+                                    <small class="text-danger">[{{ error }}]</small>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col">
+                        {{ form.database_type.label }}
+                        {{ form.database_type(class="custom-select") }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            {{ form.username.label }} {{ form.username(class="form-control", placeholder="Server login username") }}
+                            {% for error in form.username.errors %}
+                                <div>
+                                    <small class="text-danger">[{{ error }}]</small>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            {{ form.password.label }} {{ form.password(class="form-control", placeholder="Server login password") }}
+                            {% for error in form.password.errors %}
+                                <div>
+                                    <small class="text-danger">[{{ error }}]</small>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    {{ form.submit(class="btn btn-primary") }}
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

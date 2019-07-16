@@ -1,0 +1,17 @@
+#!/bin/sh
+tmux new-session  -s "dev" -n "home" \; \
+	split-window -v -p 30 \; \
+	send-keys 'cdpd' C-m 'c' C-m \; \
+	select-pane -t 1 \; \
+	new-window -n 'portal-develop' \; \
+	send-keys 'portal' C-m 'c' C-m \; \
+	split-window -v -p 30 \; \
+	send-keys 'portal' C-m  'python manage.py runserver' C-m \; \
+	select-pane -t 1 \; \
+	new-window -n 'go-projects' \; \
+	send-keys 'cdgo' C-m 'c' C-m \; \
+	split-window -v -p 30 \; \
+	send-keys 'cdgo' C-m 'c' C-m \; \
+	select-pane -t 1 \; \
+	select-window -t 2 \; \
+	select-pane -t 1 \;

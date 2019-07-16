@@ -1,0 +1,13 @@
+img {
+  float: left;
+  width: 23%;
+  margin: 1%;
+}
+h2 {
+  width: 30%;
+  margin: 1%;
+  font-family: 'Berkshire Swash', cursive;
+  text-align: left;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 5px;
+}

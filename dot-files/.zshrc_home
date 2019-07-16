@@ -1,0 +1,5 @@
+
+[ -f ~/.local_settings_rc ] && source ~/.local_settings_rc
+
+alias vpn="~/tools/forticlientsslvpn/64bit/forticlientsslvpn_cli --server vpn.tower-research.com:443 --vpnuser rbhanot"
+ofc='rbhanotlinux.gurg-off.tower-research.com'

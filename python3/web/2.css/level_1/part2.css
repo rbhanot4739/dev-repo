@@ -1,0 +1,26 @@
+.div1{
+  color: blue;
+  border: 2px dashed brown;
+}
+
+.div2{
+  color: green;
+  border: 3px dotted purple;
+}
+
+#ccd{
+  color: red;
+  text-decoration: line-through;
+}
+
+h3 + ol {
+  color: purple;
+}
+
+ol a{
+  border: 1px dashed brown;
+}
+
+a[href="http://www.starbucks.in"]{
+  color: cyan;
+}

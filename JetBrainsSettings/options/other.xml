@@ -1,0 +1,58 @@
+<application>
+  <component name="NodeJsLocalInterpreters">
+    <local-interpreter path="/usr/bin/node" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ActionMacroConfigurationPanel.SPLITTER_PROPORTION" value="0.5" />
+    <property name="ColorChooser.RecentColors" value="228-234-255-255,,,233-118-96-255,,,233-157-129-255" />
+    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.61044174" />
+    <property name="CommittedChanges.SplitterProportions.0" value="700" />
+    <property name="CommittedChanges.SplitterProportions.1" value="500" />
+    <property name="Copy.OpenInEditor" value="true" />
+    <property name="Darcula.SavedEditorTheme" value="_@user_Colorful Darcula" />
+    <property name="Default.SavedEditorTheme" value="_@user_Default" />
+    <property name="FileChooser.ShowPath" value="true" />
+    <property name="FileTemplates.SelectedTemplate" value="Go Main" />
+    <property name="InstalledPluginsSearchHistory" value="sett&#10;remote&#10;Docker&#10;scro&#10;sql" />
+    <property name="KEYMAP" value="showdiff&#10;last edi&#10;show inten&#10;Database&#10;Close e" />
+    <property name="LayoutCode.optimizeImports" value="false" />
+    <property name="LayoutCode.processChangedText" value="false" />
+    <property name="PACKAGE_FILTER" value="black&#10;yapf" />
+    <property name="ProjectStructure.TopLevelElements" value="0.18124007" />
+    <property name="SettingsSearchHistory" value="django&#10;terminal&#10;memory&#10;sql&#10;sqli" />
+    <property name="TrendingPluginsSearchHistory" value="tag:Editor&#10;tag:UI&#10;sola&#10;docker&#10;comment" />
+    <property name="com.intellij.database.actions.DdlActions$DeleteProvider2$1.previewExpanded" value="true" />
+    <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Dependencies" />
+    <property name="com.intellij.remoteServer.impl.runtime.ui.ServersToolWindowContent:com.intellij.docker.view.DockerViewContribution.0" value="300" />
+    <property name="create.project.preferred.importer" value="Existing Sources" />
+    <property name="defaultJdkConfigured" value="true" />
+    <property name="emmet.last.wrap.abbreviations" value="div.container" />
+    <property name="emmet.recent.wrap.abbreviations" value="div.container&#10;img.rounded-cirlce.acount-image&#10;li.page-item&#10;div" />
+    <property name="evlsprt3.191" value="14" />
+    <property name="file.chooser.recent.files" value="/spare/ssd/rbhanot/python-projects/portal/towerportal&#10;/spare/ssd/rbhanot/python-projects/portal/portal-env/bin/python&#10;/spare/ssd/rbhanot/python-projects/portal/towerportal/portal-env/bin/python&#10;/spare/ssd/portal/towerportal/venv/bin/python&#10;/spare/ssd/portal/towerportal&#10;/srv&#10;/spare/ssd/portal&#10;/spare/ssd/portal/venv/bin/python&#10;/apps/nttech/rbhanot/tools/go&#10;/spare/ssd/rbhanot/go_projects&#10;/spare/ssd/rbhanot/python-dotfiles/python3/flask-projects/login_app&#10;/spare/ssd/rbhanot/go_work&#10;/apps/nttech/rbhanot/python-dotfiles/pycharm-settings.zip&#10;/apps/nttech/rbhanot/tools/miniconda3/envs/flask-env/bin/python&#10;/apps/nttech/rbhanot/python-dotfiles/python3/flask-projects/login_app&#10;/apps/nttech/rbhanot/tools/miniconda3/envs/py37/bin/python&#10;/spare/ssd/rbhanot/python-dotfiles/python3" />
+    <property name="file.gist.reindex.count" value="144121" />
+    <property name="fileTypeChangedCounter" value="50" />
+    <property name="find.popup.splitter" value="0.57462686" />
+    <property name="go.last.update.timestamp" value="1557406171871" />
+    <property name="go.libraries.notification.had.been.shown" value="true" />
+    <property name="ideavim.statistics.timestamp" value="1559283956300" />
+    <property name="installed.kotlin.plugin.version" value="1.3.21-release-IJ2019.1-3" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="jdk.selected.PYTHON_MODULE" value="Python 3.7 (py37)" />
+    <property name="last.imported.location" value="/spare/ssd/rbhanot/python-projects/portal/towerportal" />
+    <property name="lastTip" value="116" />
+    <property name="mt.showStatisticsAgreement" value="true" />
+    <property name="project.wizard.group" value="WEB_MODULE" />
+    <property name="project.wizard.template" value="Go" />
+    <property name="python.app.engine.sdk.path" value="" />
+    <property name="tasks.pass.word.conversion.enforced" value="true" />
+    <property name="ts.lib.d.ts.version" value="3.4.1" />
+  </component>
+  <component name="PyTestFrameworkService">
+    <option name="SDK_TO_PYTEST">
+      <map>
+        <entry key="$USER_HOME$/tools/miniconda3/envs/py37/bin/python" value="true" />
+      </map>
+    </option>
+  </component>
+</application>

@@ -1,0 +1,36 @@
+{% macro render_field(field) %}
+    {{ field.label(class="form-control-label font-weight-bold text-muted") }}
+    {% if field.errors %}
+        {{ field(class="form-control is-invalid") }}
+        <div class="invalid-feedback">
+            {% for error in field.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+    {% else %}
+        {{ field(**kwargs)|safe }}
+    {% endif %}
+{% endmacro %}
+
+
+{% macro render_button(button) %}
+    {{ button(**kwargs)|safe }}
+{% endmacro %}
+
+{% macro flash_messages() %}
+    {% with messages = get_flashed_messages(with_categories='true') %}
+        {% if messages %}
+            {% for cat, msg in messages %}
+                {% if cat not in ('info', 'success', 'warning', 'danger') %}
+                    {% set cat = 'info' %}
+                {% endif %}
+                <div class="alert alert-{{ cat }} alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{ msg }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% endmacro %}

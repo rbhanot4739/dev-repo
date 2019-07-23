@@ -8,15 +8,16 @@ import itertools as it
 
 bills = list(it.chain.from_iterable([[20]*3, [10]*5, [5]*2, [1]*5]))
 
-total_combinations = (it.combinations(bills, i) for i in range(len(bills)))
+total_combinations = (it.combinations(bills, i) for i in range(5, len(bills)))
 comb_100s = []
-
+count = 0
 for combination in total_combinations:
     for val in combination:
+        count += 1
         if sum(val) == 100:
             comb_100s.append(val)
 
-print(set(comb_100s))
+print(set(comb_100s), count)
 
 # Here’s a variation on the same problem:
 # How many ways are there to make change for a $100 bill using any number of $50, $20, $10, $5, and $1 dollar bills?

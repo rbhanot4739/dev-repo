@@ -1,0 +1,94 @@
+<application>
+  <component name="RecentDirectoryProjectsManager">
+    <option name="recentPaths">
+      <list>
+        <option value="/spare/ssd/rbhanot-data/python-projects/freeipa-scripts" />
+        <option value="/spare/ssd/rbhanot-data/python-projects/towerportal" />
+        <option value="/spare/ssd/rbhanot-data/python-dotfiles/python3/django-projects/BlogProject" />
+        <option value="/spare/ssd/rbhanot-data/python-projects/freeipa" />
+      </list>
+    </option>
+    <option name="openPaths">
+      <list>
+        <option value="/spare/ssd/rbhanot-data/python-projects/freeipa-scripts" />
+      </list>
+    </option>
+    <option name="names">
+      <map>
+        <entry key="/spare/ssd/rbhanot-data/python-projects/freeipa-scripts" value="freeipa-scripts, freeipa" />
+      </map>
+    </option>
+    <option name="lastPath" value="/spare/ssd/rbhanot-data/python-projects/freeipa-scripts" />
+    <option name="pid" value="" />
+    <option name="additionalInfo">
+      <map>
+        <entry key="/spare/ssd/rbhanot-data/python-dotfiles/python3/django-projects/BlogProject">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PY-191.7479.30" />
+              <option name="productionCode" value="PY" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1563339923760" />
+              <option name="buildTimestamp" value="1559140112698" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/spare/ssd/rbhanot-data/python-dotfiles/python3/django-projects/testproject">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PY-191.7479.30" />
+              <option name="productionCode" value="PY" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1560952222723" />
+              <option name="buildTimestamp" value="1559140082376" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/spare/ssd/rbhanot-data/python-projects/freeipa">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PY-191.7479.30" />
+              <option name="productionCode" value="PY" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1562770203863" />
+              <option name="buildTimestamp" value="1559140134508" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/spare/ssd/rbhanot-data/python-projects/freeipa-scripts">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PY-191.7479.30" />
+              <option name="productionCode" value="PY" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1563961130583" />
+              <option name="buildTimestamp" value="1559140122970" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/spare/ssd/rbhanot-data/python-projects/towerportal">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PY-191.7479.30" />
+              <option name="productionCode" value="PY" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1563950083637" />
+              <option name="buildTimestamp" value="1559140109057" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/tmp/freeipa_login.py">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PY-191.7479.30" />
+              <option name="productionCode" value="PY" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1560840091849" />
+              <option name="buildTimestamp" value="1559140130568" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</application>

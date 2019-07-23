@@ -1,5 +1,7 @@
 <code_scheme name="Default" version="173">
-  <option name="RIGHT_MARGIN" value="180" />
+  <option name="RIGHT_MARGIN" value="110" />
+  <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="true" />
+  <option name="SOFT_MARGINS" value="110" />
   <Python>
     <option name="OPTIMIZE_IMPORTS_SORT_NAMES_IN_FROM_IMPORTS" value="true" />
     <option name="OPTIMIZE_IMPORTS_JOIN_FROM_IMPORTS_WITH_SAME_SOURCE" value="true" />
@@ -10,8 +12,8 @@
     <option name="SPACE_AFTER_COLON" value="true" />
   </codeStyleSettings>
   <codeStyleSettings language="Python">
-    <option name="RIGHT_MARGIN" value="79" />
+    <option name="RIGHT_MARGIN" value="110" />
     <option name="WRAP_ON_TYPING" value="1" />
-    <option name="SOFT_MARGINS" value="79" />
+    <option name="SOFT_MARGINS" value="110" />
   </codeStyleSettings>
 </code_scheme>

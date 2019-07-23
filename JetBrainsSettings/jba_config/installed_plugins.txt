@@ -1,18 +1,18 @@
 IdeaVIM
-Twelf Plugin
 codes.rudolph.idea.cfg
 com.intellij.plugins.vscodekeymap
-com.jetbrains.CyanTheme
-com.jetbrains.plugins.ini4idea
 com.mallowigi
 com.mnw.tabmover
+io.github.qeesung.component.HighlightBracketPair
 mobi.hsz.idea.gitignore
 izhangzhihao.rainbow.brackets
-org.jetbrains.plugins.go
-Pythonid
 org.toml.lang
 org.vayafulano.relativeLineNumbers
-io.github.qeesung.component.HighlightBracketPair
 net.vektah.codeglance
-com.adrian.dima.theme.monkai.pro
-Identifier Highlighter
+BashSupport
+com.markskelton.one-dark-theme
+zielu.gittoolbox
+Key Promoter X
+com.godwin.json.parser
+GrepConsole
+color.scheme.Cobalt 2

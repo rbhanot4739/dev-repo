@@ -26,7 +26,7 @@
     <keyboard-shortcut first-keystroke="shift ctrl minus" />
   </action>
   <action id="Diff.ShowDiff">
-    <keyboard-shortcut first-keystroke="shift ctrl comma" />
+    <keyboard-shortcut first-keystroke="ctrl alt slash" />
   </action>
   <action id="EditorCloneCaretAbove">
     <keyboard-shortcut first-keystroke="ctrl up" />
@@ -58,10 +58,6 @@
   <action id="HideSideWindows">
     <keyboard-shortcut first-keystroke="ctrl b" />
     <keyboard-shortcut first-keystroke="shift ctrl slash" />
-  </action>
-  <action id="JumpToLastChange">
-    <keyboard-shortcut first-keystroke="ctrl k" second-keystroke="ctrl q" />
-    <keyboard-shortcut first-keystroke="shift ctrl back_space" />
   </action>
   <action id="MoveTabDown">
     <keyboard-shortcut first-keystroke="ctrl alt down" />

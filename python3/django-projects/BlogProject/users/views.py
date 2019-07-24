@@ -16,4 +16,3 @@ def register(request):
             messages.success(request, 'User created')
             return redirect('login')
     return render(request, "users/register.html", {"form": form})
-

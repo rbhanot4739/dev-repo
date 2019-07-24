@@ -4,98 +4,133 @@
       <name value="Python 3.7 (py37)" />
       <type value="Python SDK" />
       <version value="Python 3.7.1" />
-      <homePath value="$USER_HOME$/tools/miniconda3/envs/py37/bin/python" />
+      <homePath value="$USER_HOME$/tools/miniconda3/envs/py37/bin/python3" />
       <roots>
-        <annotationsPath>
-          <root type="composite" />
-        </annotationsPath>
         <classPath>
           <root type="composite">
             <root url="file://$USER_HOME$/tools/miniconda3/envs/py37/lib/python3.7" type="simple" />
             <root url="file://$USER_HOME$/tools/miniconda3/envs/py37/lib/python3.7/lib-dynload" type="simple" />
             <root url="file://$USER_HOME$/tools/miniconda3/envs/py37/lib/python3.7/site-packages" type="simple" />
-            <root url="file://$USER_HOME$/.IntelliJIdea2019.1/system/python_stubs/382223939" type="simple" />
-            <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/python-skeletons" type="simple" />
-            <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/typeshed/stdlib/3" type="simple" />
-            <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/typeshed/stdlib/2and3" type="simple" />
-            <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/typeshed/third_party/3" type="simple" />
-            <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/typeshed/third_party/2and3" type="simple" />
+            <root url="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1035959728" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/2and3" type="simple" />
           </root>
         </classPath>
-        <javadocPath>
-          <root type="composite" />
-        </javadocPath>
         <sourcePath>
           <root type="composite" />
         </sourcePath>
       </roots>
-      <additional ASSOCIATED_PROJECT_PATH="$USER_HOME$/python-dotfiles/python3" />
+      <additional ASSOCIATED_PROJECT_PATH="$USER_HOME$/freeipa_login.py" />
     </jdk>
     <jdk version="2">
-      <name value="Python 3.7 (flask-env)" />
+      <name value="Python 3.5" />
       <type value="Python SDK" />
-      <version value="Python 3.7.1" />
-      <homePath value="$USER_HOME$/tools/miniconda3/envs/flask-env/bin/python" />
+      <version value="Python 3.5.2" />
+      <homePath value="/usr/bin/python3.5" />
       <roots>
-        <annotationsPath>
-          <root type="composite" />
-        </annotationsPath>
         <classPath>
           <root type="composite">
-            <root url="file://$USER_HOME$/tools/miniconda3/envs/flask-env/lib/python3.7" type="simple" />
-            <root url="file://$USER_HOME$/tools/miniconda3/envs/flask-env/lib/python3.7/lib-dynload" type="simple" />
-            <root url="file://$USER_HOME$/tools/miniconda3/envs/flask-env/lib/python3.7/site-packages" type="simple" />
-            <root url="file://$USER_HOME$/.IntelliJIdea2019.1/system/python_stubs/-2033435069" type="simple" />
-            <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/python-skeletons" type="simple" />
-            <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/typeshed/stdlib/3" type="simple" />
-            <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/typeshed/stdlib/2and3" type="simple" />
-            <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/typeshed/third_party/3" type="simple" />
-            <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/typeshed/third_party/2and3" type="simple" />
+            <root url="file:///usr/lib/python3.5" type="simple" />
+            <root url="file:///usr/lib/python3.5/plat-x86_64-linux-gnu" type="simple" />
+            <root url="file:///usr/lib/python3.5/lib-dynload" type="simple" />
+            <root url="file://$USER_HOME$/.local/lib/python3.5/site-packages" type="simple" />
+            <root url="file:///usr/local/lib/python3.5/dist-packages" type="simple" />
+            <root url="file:///usr/lib/python3/dist-packages" type="simple" />
+            <root url="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1247971764" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/2and3" type="simple" />
           </root>
         </classPath>
-        <javadocPath>
-          <root type="composite" />
-        </javadocPath>
-        <sourcePath>
-          <root type="composite" />
-        </sourcePath>
-      </roots>
-      <additional ASSOCIATED_PROJECT_PATH="$USER_HOME$/python-dotfiles/python3/flask-projects" />
-    </jdk>
-    <jdk version="2">
-      <name value="Python 2.7 (portal-env)" />
-      <type value="Python SDK" />
-      <version value="Python 2.7.12" />
-      <homePath value="/spare/ssd/rbhanot/python-projects/portal/portal-env/bin/python" />
-      <roots>
-        <annotationsPath>
-          <root type="composite" />
-        </annotationsPath>
-        <classPath>
-          <root type="composite">
-            <root url="file:///spare/ssd/rbhanot/python-projects/portal/portal-env/lib/python2.7" type="simple" />
-            <root url="file:///spare/ssd/rbhanot/python-projects/portal/portal-env/lib/python2.7/lib-dynload" type="simple" />
-            <root url="file:///usr/lib/python2.7" type="simple" />
-            <root url="file:///usr/lib/python2.7/plat-x86_64-linux-gnu" type="simple" />
-            <root url="file:///usr/lib/python2.7/lib-tk" type="simple" />
-            <root url="file:///spare/ssd/rbhanot/python-projects/portal/portal-env/local/lib/python2.7/site-packages" type="simple" />
-            <root url="file:///spare/ssd/rbhanot/python-projects/portal/portal-env/lib/python2.7/site-packages" type="simple" />
-            <root url="file://$USER_HOME$/.IntelliJIdea2019.1/system/python_stubs/-1738025249" type="simple" />
-            <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/python-skeletons" type="simple" />
-            <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/typeshed/stdlib/2" type="simple" />
-            <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/typeshed/stdlib/2and3" type="simple" />
-            <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/typeshed/third_party/2" type="simple" />
-            <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/typeshed/third_party/2and3" type="simple" />
-          </root>
-        </classPath>
-        <javadocPath>
-          <root type="composite" />
-        </javadocPath>
         <sourcePath>
           <root type="composite" />
         </sourcePath>
       </roots>
       <additional />
+    </jdk>
+    <jdk version="2">
+      <name value="Python 3.7 (django-env)" />
+      <type value="Python SDK" />
+      <version value="Python 3.7.1" />
+      <homePath value="$USER_HOME$/tools/miniconda3/envs/django-env/bin/python" />
+      <roots>
+        <classPath>
+          <root type="composite">
+            <root url="file://$USER_HOME$/tools/miniconda3/envs/django-env/lib/python3.7" type="simple" />
+            <root url="file://$USER_HOME$/tools/miniconda3/envs/django-env/lib/python3.7/lib-dynload" type="simple" />
+            <root url="file://$USER_HOME$/tools/miniconda3/envs/django-env/lib/python3.7/site-packages" type="simple" />
+            <root url="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/1673456245" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/2and3" type="simple" />
+          </root>
+        </classPath>
+        <sourcePath>
+          <root type="composite" />
+        </sourcePath>
+      </roots>
+      <additional ASSOCIATED_PROJECT_PATH="/spare/ssd/rbhanot-data/python-dotfiles/python3/django-projects/testproject" />
+    </jdk>
+    <jdk version="2">
+      <name value="Python 2.7 (venv)" />
+      <type value="Python SDK" />
+      <version value="Python 2.7.12" />
+      <homePath value="/spare/ssd/rbhanot-data/python-projects/venv/bin/python" />
+      <roots>
+        <classPath>
+          <root type="composite">
+            <root url="file:///spare/ssd/rbhanot-data/python-projects/venv/lib/python2.7" type="simple" />
+            <root url="file:///spare/ssd/rbhanot-data/python-projects/venv/lib/python2.7/lib-dynload" type="simple" />
+            <root url="file:///usr/lib/python2.7" type="simple" />
+            <root url="file:///usr/lib/python2.7/plat-x86_64-linux-gnu" type="simple" />
+            <root url="file:///usr/lib/python2.7/lib-tk" type="simple" />
+            <root url="file:///spare/ssd/rbhanot-data/python-projects/venv/local/lib/python2.7/site-packages" type="simple" />
+            <root url="file:///spare/ssd/rbhanot-data/python-projects/venv/lib/python2.7/site-packages" type="simple" />
+            <root url="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-593350840" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/2" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/2and3" type="simple" />
+          </root>
+        </classPath>
+        <sourcePath>
+          <root type="composite" />
+        </sourcePath>
+      </roots>
+      <additional ASSOCIATED_PROJECT_PATH="/spare/ssd/rbhanot-data/python-projects/towerportal" />
+    </jdk>
+    <jdk version="2">
+      <name value="Python 3.7 (freeipa-env)" />
+      <type value="Python SDK" />
+      <version value="Python 3.7.1" />
+      <homePath value="$USER_HOME$/tools/miniconda3/envs/freeipa-env/bin/python" />
+      <roots>
+        <classPath>
+          <root type="composite">
+            <root url="file://$USER_HOME$/tools/miniconda3/envs/freeipa-env/lib/python3.7" type="simple" />
+            <root url="file://$USER_HOME$/tools/miniconda3/envs/freeipa-env/lib/python3.7/lib-dynload" type="simple" />
+            <root url="file://$USER_HOME$/tools/miniconda3/envs/freeipa-env/lib/python3.7/site-packages" type="simple" />
+            <root url="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-2142713368" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/2and3" type="simple" />
+          </root>
+        </classPath>
+        <sourcePath>
+          <root type="composite" />
+        </sourcePath>
+      </roots>
+      <additional ASSOCIATED_PROJECT_PATH="/spare/ssd/rbhanot-data/python-projects/freeipa" />
     </jdk>
   </component>
 </application>

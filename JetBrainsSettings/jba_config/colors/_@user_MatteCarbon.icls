@@ -1,10 +1,10 @@
 <scheme name="_@user_MatteCarbon" version="142" parent_scheme="Darcula">
   <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
-    <property name="created">2019-05-30T16:42:16</property>
-    <property name="ide">idea</property>
+    <property name="created">2019-07-24T19:42:58</property>
+    <property name="ide">Python</property>
     <property name="ideVersion">2019.1.3.0.0</property>
-    <property name="modified">2019-05-30T16:47:02</property>
+    <property name="modified">2019-07-24T19:47:02</property>
     <property name="originalScheme">MatteCarbon</property>
   </metaInfo>
   <option name="LINE_SPACING" value="1.0" />
@@ -85,8 +85,8 @@
     <option name="WHITESPACES_MODIFIED_LINES_COLOR" value="214760" />
   </colors>
   <attributes>
-    <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
-    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
+    <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES" baseAttributes="" />
+    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="" />
     <option name="BAD_CHARACTER">
       <value>
         <option name="EFFECT_COLOR" value="ff4262" />
@@ -463,7 +463,7 @@
         <option name="ERROR_STRIPE_COLOR" value="2c4e68" />
       </value>
     </option>
-    <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES" baseAttributes="CLASS_NAME_ATTRIBUTES" />
+    <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES" baseAttributes="" />
     <option name="INJECTED_LANGUAGE_FRAGMENT">
       <value>
         <option name="BACKGROUND" value="1e2a3e" />
@@ -486,8 +486,8 @@
         <option name="FOREGROUND" value="acacac" />
       </value>
     </option>
-    <option name="JAVA_KEYWORD" baseAttributes="DEFAULT_KEYWORD" />
-    <option name="JAVA_VALID_STRING_ESCAPE" baseAttributes="DEFAULT_VALID_STRING_ESCAPE" />
+    <option name="JAVA_KEYWORD" baseAttributes="" />
+    <option name="JAVA_VALID_STRING_ESCAPE" baseAttributes="" />
     <option name="JSON.PROPERTY_KEY">
       <value>
         <option name="FOREGROUND" value="bac8cb" />
@@ -569,7 +569,7 @@
         <option name="ERROR_STRIPE_COLOR" value="977ab" />
       </value>
     </option>
-    <option name="TYPE_PARAMETER_NAME_ATTRIBUTES" baseAttributes="DEFAULT_PARAMETER" />
+    <option name="TYPE_PARAMETER_NAME_ATTRIBUTES" baseAttributes="" />
     <option name="UNMATCHED_BRACE_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="ff4262" />

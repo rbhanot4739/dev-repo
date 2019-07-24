@@ -1,18 +1,7 @@
 <application>
   <component name="UpdatesConfigurable">
-    <enabledExternalComponentSources>
-      <item value="Android SDK" />
-    </enabledExternalComponentSources>
-    <option name="externalUpdateChannels">
-      <map>
-        <entry key="Android SDK" value="Stable Channel" />
-      </map>
-    </option>
-    <knownExternalComponentSources>
-      <item value="Android SDK" />
-    </knownExternalComponentSources>
-    <option name="LAST_BUILD_CHECKED" value="IU-191.7479.19" />
-    <option name="LAST_TIME_CHECKED" value="1559313960011" />
+    <option name="LAST_BUILD_CHECKED" value="PY-191.7479.30" />
+    <option name="LAST_TIME_CHECKED" value="1563979817506" />
     <pluginHosts>
       <item value="https://plugins.jetbrains.com/plugins/eap/ideavim" />
     </pluginHosts>

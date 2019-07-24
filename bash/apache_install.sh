@@ -17,7 +17,7 @@ cd apr-util-1.6.1 && ./configure --prefix="$INSTALL_PATH/apache/libs/apr-util-1.
 cd pcre-8.38 && ./configure --prefix="$INSTALL_PATH/apache/libs/pcre/pcre-8.38" && make && make install && cd ..
 
 # install apache
-cd httpd-2.4.39 && ./configure --prefix="$INSTALL_PATH/apache/" --with-apr="$INSTALL_PATH/apache/libs/srclib/apr-1.7.0/" --with-apr-util="$INSTALL_PATH/apache/libs/apr-util-1.6.1/" --with-pcre="$INSTALL_PATH/apache/libs/pcre/pcre-8.38" && make && make install && cd ..
+cd httpd-2.4.39 && ./configure --prefix="$INSTALL_PATH/apache" --with-apr="$INSTALL_PATH/apache/libs/srclib/apr-1.7.0/" --with-apr-util="$INSTALL_PATH/apache/libs/apr-util-1.6.1/" --with-pcre="$INSTALL_PATH/apache/libs/pcre/pcre-8.38" && make && make install && cd ..
 
 # install mod_wsgi
 cd mod_wsgi-4.6.5 && ./configure --prefix="$INSTALL_PATH/apache/modules/" --with-apxs="$INSTALL_PATH/apache/bin/apxs" --with-python=/apps/nttech/rbhanot/tools/miniconda3/envs/django-env/bin/python3 && LD_RUN_PATH=/apps/nttech/rbhanot/tools/miniconda3/envs/django-env/lib make && make install & cd $INSTALL_PATH

@@ -40,7 +40,7 @@
     <property name="ExpandRunDashboardTypesPanel" value="false" />
     <property name="ExternalToolDialog.advanced.expanded" value="true" />
     <property name="InstalledPluginsSearchHistory" value="ignored&#10;conf" />
-    <property name="KEYMAP" value="quick&#10;Save&#10;Version&#10;VCS&#10;u" />
+    <property name="KEYMAP" value="class&#10;quick&#10;Save&#10;Version&#10;VCS" />
     <property name="LayoutCode.optimizeImports" value="false" />
     <property name="LayoutCode.rearrangeEntriesDjangoTemplate" value="false" />
     <property name="LayoutCode.rearrangeEntriesPython" value="false" />
@@ -58,20 +58,20 @@
     <property name="PythonUnitTestRunnerSupport.hideIgnoredTests" value="true" />
     <property name="PythonUnitTestRunnerSupport.hidePassedTests" value="false" />
     <property name="SettingsSearchHistory" value="ignored&#10;plugin&#10;key promo&#10;key pr&#10;browser" />
-    <property name="TrendingPluginsSearchHistory" value="logstash&#10;ini&#10;apache&#10;hocon&#10;conf files" />
+    <property name="TrendingPluginsSearchHistory" value="tag:UI&#10;atom&#10;Monokai&#10;visual&#10;solarized" />
     <property name="Vcs.Push.Splitter.Proportion" value="0.6557377" />
     <property name="emmet.last.wrap.abbreviations" value="li.nav-item" />
     <property name="emmet.recent.wrap.abbreviations" value="li.nav-item&#10;a&#10;div.row&gt;div.col" />
     <property name="evlsprt3.191" value="17" />
     <property name="file.chooser.recent.files" value="$USER_HOME$/.PyCharm2019.1&#10;/spare/ssd/rbhanot-data/python-dotfiles/python3/django-projects/BlogProject&#10;/spare/ssd/rbhanot-data/python-projects/freeipa&#10;/spare/ssd/rbhanot-data/python-projects/freeipa-scripts&#10;/spare/ssd/rbhanot-data/python-projects/venv/bin/python&#10;/spare/ssd/rbhanot-data/python-dotfiles/python3/django-projects/testproject&#10;/spare/ssd/rbhanot-data/python-projects/towerportal&#10;/apps/nttech/rbhanot/freeipa_login.py&#10;/apps/nttech/rbhanot/tools/miniconda3/envs/py37/bin/python3" />
-    <property name="file.gist.reindex.count" value="83167" />
+    <property name="file.gist.reindex.count" value="84821" />
     <property name="fileTypeChangedCounter" value="34" />
     <property name="find.popup.splitter" value="0.5318518" />
-    <property name="ideavim.statistics.timestamp" value="1563877586026" />
+    <property name="ideavim.statistics.timestamp" value="1563969159956" />
     <property name="krasa.IdeaIconPack" value="0" />
     <property name="krasa.grepconsole.gui.CompositeSettingsDialog" value="1305" />
-    <property name="lastTip" value="64" />
-    <property name="selected.color.option.type" value="DIAGRAM_ANNOTATION_EDGE" />
+    <property name="lastTip" value="75" />
+    <property name="selected.color.option.type" value="DEFAULT_FUNCTION_CALL" />
     <property name="settings.code.style.selected.tab.Python" value="Wrapping and Braces" />
     <property name="tasks.pass.word.conversion.enforced" value="true" />
     <property name="ts.lib.d.ts.version" value="3.4.1" />

@@ -10,9 +10,11 @@ org.toml.lang
 org.vayafulano.relativeLineNumbers
 net.vektah.codeglance
 BashSupport
-com.markskelton.one-dark-theme
 zielu.gittoolbox
 Key Promoter X
 com.godwin.json.parser
 GrepConsole
-color.scheme.Cobalt 2
+com.coderpillr
+com.samdark.intellij-visual-studio-code-dark-plus
+de.timon.schelling.interesting.theme
+com.fernandojimenez.mattecarbon.theme

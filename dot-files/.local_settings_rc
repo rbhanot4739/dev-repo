@@ -62,8 +62,6 @@ cd $CWD
 
 
 source ~/tools/miniconda3/etc/profile.d/conda.sh
-export LD_LIBRARY_PATH=/spare/ssd/rbhanot-data/tools/tmux/lib
-alias tmux="/spare/ssd/rbhanot-data/tools/tmux/bin/tmux -2"
 # alias tmux=tmux -2
 alias coa='conda activate '
 alias cod='conda deactivate '
@@ -83,7 +81,6 @@ alias gdf='git diff --name-status'
 
 alias gr='go run '
 
-alias portal="cd /spare/ssd/rbhanot-data/python-projects/towerportal && source /spare/ssd/rbhanot-data/python-projects/venv/bin/activate"
 alias cdpd='cd ~/python-dotfiles'
 alias p2='cd ~/python-dotfiles/python2; coa py2'
 alias p3='cd ~/python-dotfiles/python3; coa py37'
@@ -92,16 +89,14 @@ alias cdf='cd ~/python-dotfiles/python3/flask-projects/; coa flask-env;'
 export pd=~/python-dotfiles
 export p2=~/python-dotfiles/python2
 export p3=~/python-dotfiles/python3
-export GOPATH=/spare/ssd/rbhanot-data/go_projects
 export GOROOT=$HOME/tools/go
 alias cdgo="cd $GOPATH"
 # Mongo aliases
-export MONGO=/spare/ssd/rbhanot-data/tools/mongodb-ubuntu
 alias startmongo="mongod --dbpath $MONGO/data/db --logpath $MONGO/log/`date +%F`.log --directoryperdb --fork"
 alias repairmongo="mongod --dbpath $MONGO/data/db --directoryperdb --repair"
 # Stopping Mongo, use either --shutdown or use kill or kill -2 <mongo pid>
 alias stopmongo="mongod --shutdown"
-PATH=/snap/bin:$HOME/tools/VSCode-linux-x64:~/tools/nvim/bin:$GOROOT/bin/:$GOPATH/bin:$MONGO/bin:/spare/ssd/rbhanot-data/tools/tmux/bin:$PATH
+PATH=/snap/bin:$HOME/tools/VSCode-linux-x64:~/tools/nvim/bin:$GOROOT/bin/:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border' # Starts fzf in lower half of the screen taking 40% height

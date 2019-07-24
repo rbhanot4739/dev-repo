@@ -1,15 +1,26 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django import forms
 
 from .models import CustomUser
 
 
 class UserSignUpForm(UserCreationForm):
-    description = forms.CharField(widget=forms.Textarea(attrs={'cols': 3, 'rows': 4}))
+    # description = forms.CharField(widget=forms.Textarea(attrs={'cols': 3, 'rows': 4}))
 
     class Meta:
         model = CustomUser
         fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2', 'description']
-        # widgets = {
-        #     'description': forms.Textarea(attrs={'rows': 3})
-        # }
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 3})
+        }
+
+class UserUpdateForm(UserChangeForm):
+    # description = forms.CharField(widget=forms.Textarea(attrs={'cols': 3, 'rows': 4}))
+
+    class Meta:
+        model = CustomUser
+        fields = ['username', 'email', 'first_name', 'last_name', 'description', 'password']
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 3}),
+            'username': forms.TextInput(attrs={'readonly': 'readonly'})
+        }

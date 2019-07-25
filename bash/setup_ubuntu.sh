@@ -36,7 +36,7 @@ echo $password | sudo -S  apt-get install -y --reinstall dpkg
 
  curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 	echo -e "\n${YELLOW}..................... Installing additional packages .....................${NC}\n"
-	INSTALL_PACKAGES="gnome-tweaks curl git zsh bleachbit tlp python-setuptools python-wheel python-pip python3-setuptools python3-wheel python3-pip ninja-build gettext libtool libtool-bin autoconf automake libevent-dev libncurses-dev cmake g++ pkg-config unzip ctags libmysqlclient-dev ripgrep nodejs"
+	INSTALL_PACKAGES="gnome-tweaks curl git zsh bleachbit tlp python-setuptools python-wheel python-pip python3-setuptools python3-wheel python3-pip ninja-build gettext libtool libtool-bin autoconf automake libevent-dev libncurses-dev cmake g++ pkg-config unzip ctags libmysqlclient-dev ripgrep nodejs libapache2-mod-wsgi-py3 mysql-server "
 for pkg in $INSTALL_PACKAGES;
 do
  if [ `dpkg -l | cut -d " " -f 3 | egrep ^$pkg$ | wc -l` -ge 1   ]
@@ -80,7 +80,6 @@ do
   sudo make install > /dev/null
   cd ..
   rm -rf tmux/
-  #rm -rf tmux-2.7/
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 
@@ -93,8 +92,6 @@ do
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions > /dev/null
   git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions > /dev/null
 	git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
-	# git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
-  #git clone --recursive git://github.com/joel-porquet/zsh-dircolors-solarized $ZSH_CUSTOM/plugins/zsh-dircolors-solarized > /dev/null
 	compaudit | xargs chmod g-w,o-w
 
   cd ~/
@@ -142,10 +139,6 @@ npm install npm --global
 	bash Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/tools/miniconda3
 	echo -e "\n${YELLOW}.....................  Setting up virtual environments .....................${NC}\n"
 	$HOME/tools/miniconda3/bin/conda create --name py37 --clone base
-	~/tools/miniconda3/envs/py37/bin/python -m pip install -r ~/python-dotfiles/python3/requirements.txt
-	cd ~/python-dotfiles/python3/flask-projects
-	~/tools/miniconda3/envs/py37/bin/python -m venv .flask-env
-	~/python-dotfiles/python3/flask-projects/.flask-env/bin/python -m pip install -r ~/python-dotfiles/python3/flask-projects/requirements.txt
 	cd
 
 
@@ -170,11 +163,12 @@ npm install npm --global
   echo -e "\n${YELLOW}.....................  Installing Pycharm Professional .....................${NC}\n"
   echo $password | sudo -S snap install pycharm-professional --classic
 
+
   echo -e "\n${YELLOW}.....................  Installing Google Chrome .....................${NC}\n"
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-echo $password | sudo -S sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-echo $password | sudo -S apt-get update > /dev/null
-echo $password | sudo -S apt-get install google-chrome-stable
+	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+	echo $password | sudo -S sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+	echo $password | sudo -S apt-get update > /dev/null
+	echo $password | sudo -S apt-get install google-chrome-stable
 
   echo -e "\n${YELLOW}.....................  Removing some bloatware .....................${NC}\n"
 

@@ -6,4 +6,3 @@ hg4idea
 org.coffeescript
 org.jetbrains.plugins.haml
 org.jetbrains.plugins.stylus
-com.mallowigi

@@ -79,6 +79,9 @@
     <keyboard-shortcut first-keystroke="ctrl page_up" />
     <keyboard-shortcut first-keystroke="alt left" />
   </action>
+  <action id="QuickJavaDoc">
+    <keyboard-shortcut first-keystroke="shift ctrl q" />
+  </action>
   <action id="RecentFiles">
     <keyboard-shortcut first-keystroke="ctrl p" />
   </action>

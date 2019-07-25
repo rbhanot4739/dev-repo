@@ -2,7 +2,6 @@ AngularJS
 PerforceDirectPlugin
 Subversion
 com.jetbrains.performancePlugin
-com.mallowigi
 hg4idea
 org.coffeescript
 org.jetbrains.plugins.haml

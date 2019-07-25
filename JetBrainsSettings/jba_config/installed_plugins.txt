@@ -14,7 +14,6 @@ zielu.gittoolbox
 Key Promoter X
 com.godwin.json.parser
 GrepConsole
-com.coderpillr
 com.samdark.intellij-visual-studio-code-dark-plus
 de.timon.schelling.interesting.theme
 com.fernandojimenez.mattecarbon.theme

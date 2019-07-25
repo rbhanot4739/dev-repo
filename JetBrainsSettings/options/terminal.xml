@@ -1,5 +1,6 @@
 <application>
   <component name="TerminalOptionsProvider">
+    <option name="myOverrideIdeShortcuts" value="false" />
     <option name="myTabName" value="zsh" />
   </component>
 </application>

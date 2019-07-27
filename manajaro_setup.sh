@@ -25,6 +25,7 @@ then
 
 	echo -e "\n${YELLOW}..................... Starting the setup process .....................${NC}\n"
 	echo $password | sudo pacman-key --init
+	echo $password | sudo -S sed -i -e '/Misc options/a Color\nIlovecandy'  /etc/pacman.conf 
 	echo -e "\n${YELLOW}..................... Running sudo pacman --noconfirm -Syyu .....................${NC}\n"
 	echo $password | sudo pacman --noconfirm -Syyu > /dev/null
 	

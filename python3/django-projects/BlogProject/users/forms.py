@@ -14,13 +14,15 @@ class UserSignUpForm(UserCreationForm):
             'description': forms.Textarea(attrs={'rows': 3})
         }
 
+
 class UserUpdateForm(UserChangeForm):
-    # description = forms.CharField(widget=forms.Textarea(attrs={'cols': 3, 'rows': 4}))
+    password = None
 
     class Meta:
         model = CustomUser
-        fields = ['username', 'email', 'first_name', 'last_name', 'description', 'password']
+        fields = ['username', 'email', 'first_name', 'last_name', 'description', ]
         widgets = {
             'description': forms.Textarea(attrs={'rows': 3}),
-            'username': forms.TextInput(attrs={'readonly': 'readonly'})
+            'username': forms.TextInput(attrs={'readonly': 'readonly'}),
+            'email': forms.TextInput(attrs={'readonly': 'readonly'})
         }

@@ -2,6 +2,8 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from .models import CustomUser
 from .forms import UserSignUpForm, UserUpdateForm
+from django.contrib.auth.views import (password_reset, password_reset_done, password_reset_confirm,
+                                       password_reset_complete)
 
 
 # Create your views here.
@@ -28,3 +30,4 @@ def profile(request, uid):
         print(user)
         form = UserUpdateForm(instance=user)
         return render(request, "users/profile.html", {'form': form})
+

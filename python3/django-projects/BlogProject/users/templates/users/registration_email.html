@@ -1,0 +1,7 @@
+{% autoescape off %}
+    <h3>Welcome to our Site.</h3><br>
+    <p>
+        Please visit the below link to activate your account.
+        http://localhost:8000/users/activate/{{ user }}/{{ token }}
+    </p>
+{% endautoescape %}

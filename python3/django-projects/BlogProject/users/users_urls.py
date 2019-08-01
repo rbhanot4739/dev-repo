@@ -1,13 +1,13 @@
 from django.conf.urls import url
 from django.contrib.auth.views import login, logout
 
-from .views import register, profile
+from .views import register, profile, activate_account
 from django.contrib.auth.views import (password_reset, password_reset_done, password_reset_confirm,
                                        password_reset_complete)
 
 urlpatterns = [
     url(r'register/$', register, name='register-user'),
-    url(r'profile/(?P<uid>\d+)$', profile, name='user-profile'),
+    url(r'profile/(?P<uid>\d+)/$', profile, name='user-profile'),
     url(r'login/$', login, {'template_name': "users/login.html"}, name='login'),
     url(r'logout/$', logout, {'next_page': 'login'}, name='logout'),
     url(r'password_reset/$', password_reset, {'template_name': "users/password_reset_form.html"},
@@ -18,5 +18,7 @@ urlpatterns = [
         password_reset_confirm, {'template_name': "users/password_reset_confirm.html"},
         name='password_reset_confirm'),
     url(r'reset/done/$', password_reset_complete, {'template_name': 'users/password_reset_complete.html'},
-        name='password_reset_complete')
+        name='password_reset_complete'),
+    url(r'activate/(?P<uid>[\w]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/', activate_account,
+        name='account-activate')
 ]

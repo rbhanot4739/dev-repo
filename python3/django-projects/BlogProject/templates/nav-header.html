@@ -15,11 +15,11 @@
             <ul class="navbar-nav ml-md-auto">
                 {% if user.is_authenticated %}
                     <a href="{% url 'user-profile' user.id %}" class="nav-link">Profile</a>
-                    <a href="{% url 'password_reset' %}" class="nav-link">Reset Password ?</a>
                     <a href="{% url 'logout' %}" class="nav-link">Logout</a>
                 {% else %}
                     <a href="{% url 'login' %}" class="nav-link">Login</a>
                     <a href="{% url 'register-user' %}" class="nav-link">Register</a>
+                    <a href="{% url 'password_reset' %}" class="nav-link">Reset Password ?</a>
                 {% endif %}
             </ul>
         </div>

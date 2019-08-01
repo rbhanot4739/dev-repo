@@ -3,5 +3,8 @@
 
 {% block body %}
     {% render_form form 'Login' %}
-    <small>No Account? <a href="{% url 'register-user' %}">Register</a></small>
+    <small>
+        <span>No Account? <a href="{% url 'register-user' %}">Register</a></span>
+        <span>or <a href="{% url 'password_reset' %}">Click to reset password.</a></span>
+    </small>
 {% endblock %}

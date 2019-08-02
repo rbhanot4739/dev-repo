@@ -324,7 +324,7 @@ let g:tagbar_autofocus=1
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " let g:lightline = {'colorscheme':'solarized'}
 set background=dark
-colo railscasts
+silent! colo railscasts
 let g:airline_theme='bubblegum'
 hi CursorLineNR guifg=#ffffff
 " }}}

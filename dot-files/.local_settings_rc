@@ -61,7 +61,6 @@ cd $CWD
 # fi
 
 
-source ~/tools/miniconda3/etc/profile.d/conda.sh
 # alias tmux=tmux -2
 alias coa='conda activate '
 alias cod='conda deactivate '

@@ -1,4 +1,7 @@
-#!/bin/bash BLACK='\033[0;30m' RED='\033[0;31m'
+#!/bin/bash
+
+BLACK='\033[0;30m'
+RED='\033[0;31m'
 DARK_GRAY='\033[1;30m'
 LIGHT_RED='\033[1;31m'
 GREEN='\033[1;32m'
@@ -24,14 +27,23 @@ then
 
 	echo -e "\n${YELLOW}..................... Starting the setup process .....................${NC}\n"
 	echo $password | sudo -S pacman-key --init
-	echo $password | sudo -S sed -i -e '/Misc options/a Color\nILoveCandy'  /etc/pacman.conf 
-	echo -e "\n${YELLOW}..................... Running sudo pacman --noconfirm -Syyu .....................${NC}\n"
-	echo $password | sudo -S pacman --noconfirm -Syyu
+	echo $password | sudo -S sed -i -e '/Misc options/a Color\nILoveCandy'  /etc/pacman.conf
+
+	echo -e "\n${YELLOW}.....................  Removing some bloatware .....................${NC}\n"
+	REMOVE_PACKAGES="hplip  pidgin steam-manjaro steam-devices thunderbird ms-office-online libreoffice-still libreoffice-fresh gimp xfburn engrampa system-config-printer hexchat audacious audacious-plugins microsoft-office-online-jak xterm uget empathy lollypop brasero"
+	for pkg in $REMOVE_PACKAGES
+	do
+	echo $password | sudo -S pacman --noconfirm -Rsun  $pkg
+	done
+	
+	echo -e "\n${YELLOW}..................... Updating the system with `sudo pacman --noconfirm -Syyu` .....................${NC}\n"
+	echo $password | sudo -S pacman-mirrors -f && echo $password | sudo -S pacman --noconfirm -Syyu
 	echo $password | sudo -S mhwd -a pci nonfree 0300
 	
+
 	echo -e "\n${YELLOW}..................... Installing packages .....................${NC}\n"
 
-	INSTALL_PACKAGES=" ninja libtool gcc ctags mysql ripgrep mod-wsgi apache redshift"
+	INSTALL_PACKAGES=" base-devel mod_wsgi apache python2-pip python-pip redis neovim unzip"
 
 	for pkg in $INSTALL_PACKAGES;
 	do
@@ -54,7 +66,7 @@ then
 	ssh-keygen -q -t rsa -f ~/.ssh/id_rsa -N ''
 
 
-	curl -u "rbhanot4739@gmail.com:$gpass" --data '{"title":"laptop-key","key":"'"$(cat ~/.ssh/id_rsa.pub)"'"}' https://api.github.com/user/keys > /dev/null
+	curl -u "rbhanot4739@gmail.com:$gpass" --data '{"title":"laptop-key","key":"'"$(cat ~/.ssh/id_rsa.pub)"'"}' https://api.github.com/user/keys
 
 	echo -e "\n ${YELLOW}..................... Cloning the github repo ...........${NC}\n"
 
@@ -70,9 +82,9 @@ then
 	cd /tmp
 	git clone https://github.com/tmux/tmux.git
 	cd tmux/
-	sh autogen.sh > /dev/null
-	./configure && make > /dev/null
-	sudo make install > /dev/null
+	sh autogen.sh
+	./configure && make
+	sudo make install
 	cd ..
 	rm -rf tmux/
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -83,30 +95,14 @@ then
 	wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 	echo $password | sh install.sh > /dev/null
 	cd ~/.oh-my-zsh/custom/plugins
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting > /dev/null
-	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions > /dev/null
-	git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions > /dev/null
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 	git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 	compaudit | xargs chmod g-w,o-w
-        yes $password | chsh -s $(which zsh)
+    yes $password | chsh -s $(which zsh)
 
 	cd ~/
-
-	# echo -e "\n${YELLOW}..................... Setting up NVM and NodeJS ..............................${NC}\n"
-	# npm config set prefix=$HOME/tools/.node_modules_global
-	# npm install npm --global
-	#  nvm install node
-	#  nvm use --delete-prefix v11.9.0
-	#	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-	#	source ~/.bashrc
-	#	nvm install node
-	#	cd ~/python-dotfiles/python3/web/
-	#	npm -y init
-	#	npm install -D eslint
-	#	npm install -D prettier eslint-plugin-prettier eslint-config-prettier
-	#	npm -D install stylelint --save-dev
-	#	npm -D install stylelint-config-recommended --save-dev
-
 
     echo -e "\n${YELLOW}..................... Setting up Fonts..............................${NC}\n"
 	if [ ! -d ~/.fonts ]
@@ -127,63 +123,41 @@ then
 	done
 	cp -ar ~/python-dotfiles/dot-files/nvim/ ~/.config/nvim/
 	cp -ar ~/python-dotfiles/dot-files/tmux/ ~/.tmux/
-	cp modded-steeef.zsh-theme ~/.oh-my-zsh/custom/themes/
+	cp -ar modded-steeef.zsh-theme ~/.oh-my-zsh/custom/themes/
 	cd ~/
-    
-	source ~/.zshrc
 
 
-	echo -e "\n${YELLOW}.....................  Installing NeoVim .....................${NC}\n"
-	echo $password |sudo -S python -m pip install neovim
+
+	echo -e "\n${YELLOW}.....................  Setting up NeoVim .....................${NC}\n"
+	
+	nvim +'PlugInstall --sync' +qall
+	nvim +'UpdateRemotePlugins' +qall
+
+	echo $password |sudo -S python2 -m pip install neovim
 	echo $password |sudo -S python3 -m pip install neovim
-	cd /tmp
-	git clone https://github.com/neovim/neovim.git > /dev/null
-	cd neovim/
-	if [ ! -d $HOME/tools ]
-	then
-	mkdir $HOME/tools
-	fi
-	make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/tools/nvim"
-	echo $password |sudo -S make install
-	cd ../
-	rm -rf neovim/
-	cd ~/tools/nvim/bin/
-	./nvim +'PlugInstall --sync' +qa 
-	./nvim +'UpdateRemotePlugins' +qa
 
-	echo $password |sudo -S python3 -m pip install virtualenv
+	echo -e "\n${YELLOW}.....................  Setting up Python .....................${NC}\n"
 	echo $password |sudo -S python3 -m pip install virtualenvwrapper
+	source $(which virtualenvwrapper.sh) && mkvirtualenv django-env && workon django-env && cd ~/python-dotfiles/python3/django-projects/ && pip install -r django_requirements.txt
+	deactivate
+	cd ~
 
 
 	echo -e "\n${YELLOW}.....................  Installing Chrome from AUR .....................${NC}\n"
 	cd /tmp
-	git clone https://aur.archlinux.org/google-chrome.git
-	cd google-chrome/
-	makepkg -s
-	echo $password |sudo -S pacman -U --noconfirm *xz
-	cd .. && rm -rf google-chrome/
+	git clone https://aur.archlinux.org/google-chrome.git && 	cd google-chrome/ && makepkg -s && echo $password |sudo -S pacman -U --noconfirm *xz && cd .. && rm -rf google-chrome/
 
 
 	echo -e "\n${YELLOW}.....................  Installing Jetbrains Toolbox from AUR .....................${NC}\n"
 	cd /tmp
-	git clone https://aur.archlinux.org/jetbrains-toolbox.git
-	cd jetbrains-toolbox/
-	makepkg -s
-	echo $password |sudo -S pacman -U --noconfirm *xz
-	cd .. && rm -rf jetbrains-toolbox/
+	git clone https://aur.archlinux.org/jetbrains-toolbox.git &&	cd jetbrains-toolbox/ &&	makepkg -s && echo $password |sudo -S pacman -U --noconfirm *xz && cd .. && rm -rf jetbrains-toolbox/
 
-	echo -e "\n${YELLOW}.....................  Removing some bloatware .....................${NC}\n"
 
-	REMOVE_PACKAGES="hplip  pidgin steam-manjaro steam-devices thunderbird ms-office-online libreoffice-still libstaroffice gimp xfburn engrampa system-config-printer hexchat audacious audacious-plugins microsoft-office-online-jak"
-	for pkg in $REMOVE_PACKAGES
-	do
-	echo $password | sudo -S pacman --noconfirm -Rsun  $pkg
-	done
+	echo -e "\n${YELLOW}.....................  Cleaning up Orphans & caches .....................${NC}\n"
 	echo $password |sudo -S pacman --noconfirm -Rs $(pacman -Qdtq)
 
-	echo -e "\n${YELLOW}.....................  Cleaning up caches .....................${NC}\n"
-
 	echo $password | sudo -S pacman -Scc
+
 else
 	echo -e "Different OS, exitting !!"
 	exit 1

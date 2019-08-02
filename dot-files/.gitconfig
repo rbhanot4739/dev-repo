@@ -1,15 +1,3 @@
-# This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
-	# name = Rohit Bhanot
-# email = rbhanot@tower-research.com
-[alias]
-	co = checkout
-	br = branch
-	st = status
-	cm = commit 
-	unstage = reset HEAD --
-	lc = log -1 HEAD
-	lg = log --pretty=oneline --decorate --graph
-[reviewboard]
-	url = https://sysreviews.tower-research.com
+	email = rbhanot4739@gmail.com
+	name = Rohit Bhanot

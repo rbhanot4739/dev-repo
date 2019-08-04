@@ -3,7 +3,7 @@
 function from_git () {
 CWD=$PWD
 cd ~/python-dotfiles/dot-files/
-for i in .bashrc  .bashrc_home  .bashrc_work .ideavimrc .local_settings_rc .pythonrc .tmux.conf .zshrc  .zshrc_home .zshrc_work .gitconfig dev-tmux
+for i in .bashrc  .bashrc_home  .bashrc_work .ideavimrc .local_settings_rc .pythonrc .tmux.conf .zshrc  .zshrc_home .zshrc_work dev-tmux
 do
 cp -arv $i ~/.
 done
@@ -15,7 +15,7 @@ cd $CWD
 function to_git () {
 CWD=$PWD
 cd ~/
-for i in .bashrc  .bashrc_home  .bashrc_work .ideavimrc .local_settings_rc .pythonrc .tmux.conf .zshrc  .zshrc_home .zshrc_work .gitconfig dev-tmux
+for i in .bashrc  .bashrc_home  .bashrc_work .ideavimrc .local_settings_rc .pythonrc .tmux.conf .zshrc  .zshrc_home .zshrc_work dev-tmux
 do
 cp -arv $i ~/python-dotfiles/dot-files/
 done

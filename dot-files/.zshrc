@@ -24,14 +24,12 @@ autoload -U promptinit && promptinit
 # User configuration
 host_name=`hostname`
 
-	fi
-
-	if grep -q 'tower-research.com' <<< `hostname -f`
-	then
-			source ~/.zshrc_work
-        else
-		source ~/.zshrc_home
-		fi
+if grep -q 'tower-research.com' <<< `hostname -f`
+then
+	source ~/.zshrc_work
+else
+	source ~/.zshrc_home
+fi
 
 # aliases
 alias ssh='ssh -x '

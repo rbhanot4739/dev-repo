@@ -1,6 +1,6 @@
 " Settings ---------------------------------------------- {{{
 if has("nvim")
-	set guicursor=
+	" set guicursor=
 	let $VTE_VERSION="100"
 	set inccommand=nosplit
 else
@@ -63,15 +63,15 @@ set complete=.,w,b,u,t
 set shortmess+=c
 " set fillchars+=vert:\|  " remove chars from seperators
 
+
 " Put your python path below
 let g:python_host_prog  = 'python'
-let g:python3_host_prog = 'python3'
+let g:python3_host_prog = '/usr/bin/python3'
 "}}}
 
 "Plugins ----------------------------------------------- {{{
 " Plugins will be downloaded under the specified directory.
-call plug#begin('~/.config/nvim/plugged') "------------------------------ {{{
-" Declare the list of plugins.
+call plug#begin('~/.config/nvim/plugged')
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
@@ -89,7 +89,7 @@ Plug 'ap/vim-css-color'
 Plug 'mgedmin/python-imports.vim'
 Plug 'mattn/emmet-vim'
 Plug 'tomtom/tcomment_vim'
-" Plug 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-surround'
@@ -99,7 +99,7 @@ Plug 'sheerun/vim-polyglot'
 
 " Navigation
 Plug 'majutsushi/tagbar'
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 Plug 'scrooloose/nerdtree'
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/fzf', { 'do': './install --all' }
@@ -114,8 +114,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'jpo/vim-railscasts-theme'
 Plug 'ryanoasis/vim-devicons'
-
-" Plug 'altercation/vim-colors-solarized'
 call plug#end()
 " }}}
 
@@ -204,7 +202,7 @@ let loaded_netrwPlugin = 1
 
 " fzf settings ----------------------------------------------- {{{
 " [Tags] Command to generate tags file
-let g:fzf_tags_command = 'ctags -R'
+" let g:fzf_tags_command = 'ctags -R'
 let g:fzf_action = {
 			\ 'ctrl-t': 'tab split',
 			\ 'ctrl-x': 'split',
@@ -234,14 +232,14 @@ let g:fzf_colors =
 " }}}
 
 " Tmuxline ----------------------------------------------- {{{
-let g:tmuxline_preset = {
-			\'a'    : '#S',
-			\'b'    : '#{?pane_synchronized,PANES-ARE-SYNCED,}',
-			\'win'  : '#I #W',
-			\'cwin' : '#I #W',
-			\'x'    : '%a',
-			\'y'    : '%R',
-			\'z'    : '#(date "+%b %d")'}
+" let g:tmuxline_preset = {
+" 			\'a'    : '#S',
+" 			\'b'    : '#{?pane_synchronized,PANES-ARE-SYNCED,}',
+" 			\'win'  : '#I #W',
+" 			\'cwin' : '#I #W',
+" 			\'x'    : '%a',
+" 			\'y'    : '%R',
+			" \'z'    : '#(date "+%b %d")'}
 " }}}
 
 " Airline ----------------------------------------------- {{{

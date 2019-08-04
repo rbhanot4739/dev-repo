@@ -13,7 +13,10 @@ then
 	#export NVM_DIR="/spare/ssd/rbhanot/.nvm"
 	#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-	 alias cdrb="cd /spare/ssd/rbhanot-data"
+	alias cdrb="cd /spare/ssd/rbhanot-data"
+	alias sysw="ssh towerportal@systemsweb1.newark"
+	alias neto="ssh towerportal@netops2.newark"
+	alias sfp4="ssh towerportal@sefoprod4.newark"
 
 	# export DJANGO_SETTINGS_MODULE=towerportal.settings.local_settings
 	alias start-mysql-docker="sudo tdocker start sefo-images/mysql:5.7"

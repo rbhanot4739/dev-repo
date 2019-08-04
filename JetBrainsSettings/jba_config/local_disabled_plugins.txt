@@ -3,6 +3,7 @@ PerforceDirectPlugin
 Subversion
 com.jetbrains.performancePlugin
 hg4idea
+mobi.hsz.idea.gitignore
 org.coffeescript
 org.jetbrains.plugins.haml
 org.jetbrains.plugins.stylus

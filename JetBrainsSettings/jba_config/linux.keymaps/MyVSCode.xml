@@ -62,6 +62,8 @@
     <keyboard-shortcut first-keystroke="ctrl b" />
     <keyboard-shortcut first-keystroke="shift ctrl slash" />
   </action>
+  <action id="JupyterSelectCellAboveAction" />
+  <action id="JupyterSelectCellBelowAction" />
   <action id="MoveTabDown">
     <keyboard-shortcut first-keystroke="ctrl alt down" />
   </action>
@@ -85,9 +87,15 @@
   <action id="RecentFiles">
     <keyboard-shortcut first-keystroke="ctrl p" />
   </action>
+  <action id="ReformatCode">
+    <keyboard-shortcut first-keystroke="shift alt f" />
+    <keyboard-shortcut first-keystroke="shift ctrl i" />
+  </action>
   <action id="RenameFile">
     <keyboard-shortcut first-keystroke="shift f2" />
   </action>
+  <action id="ScrollPane-unitScrollDown" />
+  <action id="ScrollPane-unitScrollUp" />
   <action id="SearchEverywhere">
     <keyboard-shortcut first-keystroke="f1" />
   </action>

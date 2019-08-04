@@ -36,7 +36,7 @@ then
 	echo $password | sudo -S pacman --noconfirm -Rsun  $pkg
 	done
 	
-	echo -e "\n${YELLOW}..................... Updating the system with `sudo pacman --noconfirm -Syyu` .....................${NC}\n"
+	echo -e "\n${YELLOW}..................... Updating the system with .....................${NC}\n"
 	echo $password | sudo -S pacman-mirrors -f && echo $password | sudo -S pacman --noconfirm -Syyu
 	echo $password | sudo -S mhwd -a pci nonfree 0300
 	
@@ -80,13 +80,16 @@ then
 
 	echo -e "\n${YELLOW}..................... Installing tmux .....................${NC}\n"
 	cd /tmp
-	git clone https://github.com/tmux/tmux.git
-	cd tmux/
-	sh autogen.sh
-	./configure && make
-	sudo make install
+	# git clone https://github.com/tmux/tmux.git
+	# cd tmux/
+	# sh autogen.sh
+	# ./configure && make
+	wget https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz
+	tar -xzvf tmux-2.8.tar.gz && cd tmux-2.8
+	 ./configure && make
+	echo $password | sudo -S make install
 	cd ..
-	rm -rf tmux/
+	rm -rf tmux-2.8/ tmux-2.8.tar.gz
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 
@@ -100,7 +103,8 @@ then
 	git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 	git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 	compaudit | xargs chmod g-w,o-w
-    yes $password | chsh -s $(which zsh)
+	yes $password | chsh -s $(which zsh)
+	mv .zshrc.pre-oh-my-zsh .zshrc
 
 	cd ~/
 
@@ -119,7 +123,7 @@ then
 	cd ~/python-dotfiles/dot-files/
 	for i in .bashrc  .bashrc_home  .bashrc_work .ideavimrc .local_settings_rc .pythonrc .tmux.conf .zshrc  .zshrc_home .zshrc_work dev-tmux
 	do
-	cp -ar $i ~/.
+	cp -ar $i ~/
 	done
 	cp -ar ~/python-dotfiles/dot-files/nvim/ ~/.config/nvim/
 	cp -ar ~/python-dotfiles/dot-files/tmux/ ~/.tmux/
@@ -157,6 +161,13 @@ then
 	echo $password |sudo -S pacman --noconfirm -Rs $(pacman -Qdtq)
 
 	echo $password | sudo -S pacman -Scc
+
+	# activate hover on brisk menu
+	gsettings set com.solus-project.brisk-menu rollover-activate true
+
+	echo $password | sudo -S systemctl enable redis
+	echo $password | sudo -S systemctl enable httpd.service
+
 
 else
 	echo -e "Different OS, exitting !!"

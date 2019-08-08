@@ -16,6 +16,7 @@ def post_list(request):
     }
     return render(request, "posts/list.html", context)
 
+
 @login_required
 def post_create(request):
     if request.POST:
@@ -41,7 +42,7 @@ def post_update(request, pid):
         if form.is_valid():
             form.save()
             messages.success(request, 'Post updated successfully.')
-            return redirect(reverse("post-detail", args=(pid, )))
+            return redirect(reverse("post-detail", args=(pid,)))
     form = CreatePost(instance=obj)
     return render(request, "posts/create.html", {'form': form, 'operation': 'update'})
 

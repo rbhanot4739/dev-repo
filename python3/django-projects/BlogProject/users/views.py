@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.http import HttpResponseForbidden
 from django.shortcuts import redirect, render
-from .models import CustomUser
+from .models import User
 from .forms import UserSignUpForm, UserUpdateForm
 from django.template.loader import render_to_string
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
@@ -20,22 +20,23 @@ def register(request):
         form = UserSignUpForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
-            user.is_active = False
+            # user.is_active = False
+            user.is_active = True
             user.save()
-            mail_message = render_to_string("users/registration_email.html",
-                                            {'user': urlsafe_base64_encode(force_bytes(user.id)),
-                                             'token': token_generator.make_token(user),
-                                             })
-            email = EmailMessage('Activate your account', mail_message, to=[user.email])
-            email.content_subtype = "html"
-            email.send()
+            # mail_message = render_to_string("users/registration_email.html",
+            #                                 {'user': urlsafe_base64_encode(force_bytes(user.id)),
+            #                                  'token': token_generator.make_token(user),
+            #                                  })
+            # email = EmailMessage('Activate your account', mail_message, to=[user.email])
+            # email.content_subtype = "html"
+            # email.send()
             messages.success(request, 'Please check your email for activation.')
             return redirect('post-home')
     return render(request, "users/register.html", {"form": form})
 
 
 def profile(request, uid):
-    user = CustomUser.objects.get(pk=uid)
+    user = User.objects.get(pk=uid)
     if request.POST:
         form = UserUpdateForm(request.POST, instance=user)
         if form.is_valid():
@@ -49,7 +50,7 @@ def profile(request, uid):
 
 def activate_account(request, uid, token):
     uid = force_text(urlsafe_base64_decode(uid))
-    user = CustomUser.objects.get(pk=uid)
+    user = User.objects.get(pk=uid)
     if user and token_generator.check_token(user, token):
         user.is_active = True
         user.save()

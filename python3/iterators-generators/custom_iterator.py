@@ -1,9 +1,9 @@
 class PowerGen(object):
     def __init__(self, high):
+        self.pow = 1
         self.high = high
 
     def __iter__(self):
-        self.pow = 1
         return self
 
     def __next__(self):
@@ -25,6 +25,4 @@ print(next(i))
 
 i = iter(obj)
 
-print(next(i))
-print(next(i))
 print(next(i))

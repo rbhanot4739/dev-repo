@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import CustomUser
+from .models import User
 
 
 # Register your models here.
 
 class CustomAdmin(admin.ModelAdmin):
-    # fields = ["first_name", "last_name", "username", "email", "password", "description"]
+    fields = ["first_name", "last_name", "username", "email", "password", "description"]
     list_display = ["first_name", "last_name", "email"]
 
 
-admin.site.register(CustomUser, CustomAdmin)
+admin.site.register(User, CustomAdmin)

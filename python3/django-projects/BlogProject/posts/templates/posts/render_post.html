@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col post-container">
         <a href="{% if page_type == 'list' %} {% url 'post-detail' obj.id %} {% endif %}">{{ obj.title }}</a>
-        <span><small class="text-muted">{{ obj.create_time }}</small></span>
+        <span><small class="text-muted">{{ obj.create_time }}</small></span><br>
         {{ obj.content }}
     </div>
 </div>

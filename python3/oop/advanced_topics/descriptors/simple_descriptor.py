@@ -25,6 +25,8 @@ class Positive:
 
 
 class Rectangle:
+    # Descriptors objects are created at class level to make sure that __set__
+    # executed on class's object initialization as well.
     length = Positive()
     breadth = Positive()
 

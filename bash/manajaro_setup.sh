@@ -30,7 +30,7 @@ then
 	echo $password | sudo -S sed -i -e '/Misc options/a Color\nILoveCandy'  /etc/pacman.conf
 
 	echo -e "\n${YELLOW}.....................  Removing some bloatware .....................${NC}\n"
-	REMOVE_PACKAGES="hplip  pidgin steam-manjaro steam-devices thunderbird ms-office-online libreoffice-still libreoffice-fresh gimp xfburn engrampa system-config-printer hexchat audacious audacious-plugins microsoft-office-online-jak xterm uget empathy lollypop brasero"
+	REMOVE_PACKAGES="hplip  pidgin steam-manjaro steam-devices thunderbird ms-office-online libreoffice-still libreoffice-fresh gimp xfburn system-config-printer hexchat audacious audacious-plugins microsoft-office-online-jak xterm uget empathy lollypop brasero transmission"
 	for pkg in $REMOVE_PACKAGES
 	do
 	echo $password | sudo -S pacman --noconfirm -Rsun  $pkg
@@ -43,7 +43,7 @@ then
 
 	echo -e "\n${YELLOW}..................... Installing packages .....................${NC}\n"
 
-	INSTALL_PACKAGES=" base-devel mod_wsgi apache python2-pip python-pip redis neovim unzip"
+	INSTALL_PACKAGES=" base-devel mod_wsgi apache python2-pip python-pip redis neovim unzip vuze nemo"
 
 	for pkg in $INSTALL_PACKAGES;
 	do

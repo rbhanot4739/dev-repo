@@ -62,8 +62,8 @@ cd $CWD
 
 
 # alias tmux=tmux -2
-alias coa='conda activate '
-alias cod='conda deactivate '
+# alias coa='conda activate '
+# alias cod='conda deactivate '
 
 alias vim="nvim"
 alias vi="/usr/bin/vim"
@@ -117,5 +117,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 alias vf='vim $(fzf)'
 
+source $(which virtualenvwrapper.sh)
 # Add every binary that requires nvm, npm or node to run to an array of node globals
 #	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

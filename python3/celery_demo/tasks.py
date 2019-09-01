@@ -3,7 +3,7 @@ from time import sleep
 from random import randint
 
 
-@app.task
+@app.task(queue='high-pri')
 def say_hello(msg="Celery"):
     return f"Hello {msg}"
 

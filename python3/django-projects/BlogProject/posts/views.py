@@ -5,10 +5,10 @@ from django.contrib import messages
 
 from .forms import CreatePost
 from .models import Post
+from django.conf import settings
 
 
 # Create your views here.
-
 def post_list(request):
     obj = Post.objects.all()
     context = {

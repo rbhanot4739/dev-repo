@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms'
+    'crispy_forms',
+    # 'django_redis'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -79,12 +80,13 @@ WSGI_APPLICATION = 'Project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': 'djangodb',
-        'HOST': 'localhost',
-        'USER': 'rohit',
-        'PASSWORD': '123'
+        # 'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'NAME': 'djangodb',
+        # 'HOST': 'localhost',
+        # 'USER': 'rohit',
+        # 'PASSWORD': '123'
     }
 }
 

@@ -1,0 +1,14 @@
+Celery Commands
+
+
+# Starting the celery worker processes
+# celery -A celery_demo worker -Q celery,high-pri,low-pri -l info
+
+# Starting the celery beat process
+# celery -A celery_demo beat -l info
+# celery -A celery_demo worker -Q celery,high-pri,low-pri -l info -B # '-B' starts the beat process
+
+# Checking celery queue status in redis
+# redis-cli -h HOST -p PORT -n DATABASE_NUMBER llen QUEUE_NAME
+# redis-cli --h localhost -p 6379-n 1 llen celery
+# redis-cli -h HOST -p PORT -n DATABASE_NUMBER keys \* - to get all the queues

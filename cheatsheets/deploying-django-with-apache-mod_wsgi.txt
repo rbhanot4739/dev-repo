@@ -1,0 +1,36 @@
+1. Install apache2 and mod_wsgi compiled with the python version you're using in you project(this is important.)
+		sudo apt-get install libapache2-mod-wsgi-py3 (for python version 3)
+		sudo apt-get install libapache2-mod-wsgi (for python version 2)
+
+2. Create the virtaul host conf file for apache, below is the sample
+	Listen 8080
+	<VirtualHost *:8080>
+
+		Alias /static /home/rbhanot/python-dotfiles/python3/django-projects/BlogProject/static_files
+		<Directory /home/rbhanot/python-dotfiles/python3/django-projects/BlogProject/static_files>
+		Require all granted
+		</Directory>
+
+	 <Directory /home/rbhanot/python-dotfiles/python3/django-projects/BlogProject/Project>
+	<Files wsgi.py>
+	Require all granted
+	</Files>
+	 </Directory>
+
+		WSGIScriptAlias / /home/rbhanot/python-dotfiles/python3/django-projects/BlogProject/Project/wsgi.py
+		WSGIDaemonProcess blogproject python-home=/home/rbhanot/tools/miniconda3/envs/django-env python-path=/home/rbhanot/python-dotfiles/python3/django-projects/BlogProject
+		# WSGIDaemonProcess blogproject python-home=/home/rbhanot/tools/miniconda3/envs/django-env python-path=/home/rbhanot/python-dotfiles/python3/django-projects/BlogProject display-name=%{GROUP}
+		WSGIProcessGroup blogproject
+
+		ErrorLog ${APACHE_LOG_DIR}/error.log
+		CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+	</VirtualHost>
+
+3. Update the django project settings.py as below
+		DEBUG = False
+		ALLOWED_HOSTS = ['*'] # or to list of hostnames or ip addresses
+		STATIC_ROOT = os.path.join(BASE_DIR, "static_files")
+
+4. Collect the static files using
+	python manage.py collectstatic

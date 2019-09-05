@@ -1,0 +1,27 @@
+Check mysql version from mysql shell
+	SHOW VARIABLES LIKE "%version%";
+Check storage engine for all tables
+	SHOW TABLE STATUS\G;
+
+Check storage engine for a single table
+	SHOW CREATE TABLE <tablename>\G
+
+SELECT table_name, table_schema 
+FROM information_schema.tables 
+WHERE engine = 'InnoDB'; # or 'MyISM'
+
+SELECT table_name, table_schema, engine
+FROM information_schema.tables;
+
+Check innodb buffer pool size
+	 SELECT @@innodb_buffer_pool_size; # in bytes
+	 SELECT @@innodb_buffer_pool_size/1024/1024; # in MBs
+	SET GLOBAL innodb_buffer_pool_size= (SELECT @@innodb_buffer_pool_size)*10;
+
+Check innodb buffer pool instances
+	SELECT @@innodb_buffer_pool_instances;
+
+select count(id) from sitedb_site;
+
+See constraints for a table
+	SHOW CREATE TABLE <tablename>\G

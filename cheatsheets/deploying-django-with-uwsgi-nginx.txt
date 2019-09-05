@@ -1,0 +1,91 @@
+Useful links
+https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html
+https://uwsgi-docs.readthedocs.io/en/latest/Options.html#
+https://uwsgi-docs.readthedocs.io/en/latest/Logging.html
+https://uwsgi-docs.readthedocs.io/en/latest/LogFormat.html
+https://uwsgi-docs.readthedocs.io/en/latest/StatsServer.html
+https://uwsgi-docs.readthedocs.io/en/latest/Glossary.html
+https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html
+
+NOTE:
+The http and http-socket options are entirely different beasts. The first one spawns an additional process forwarding requests to a series of workers (think about it as a form of shield, at the same level of apache or nginx), while the second one sets workers to natively speak the http protocol. TL/DR: if you plan to expose uWSGI directly to the public, use --http, if you want to proxy it behind a webserver speaking http with backends, use --http-socket.
+
+Create the virtual environment for the uwsgi server and then install it
+		
+		cd /home 
+		virtualenv --python=python2.7 uwsgi
+		source /home/uwsgi/bin/activate
+		/home/uwsgi/bin/python -m pip install --upgrade setuptools
+		/home/uwsgi/bin/python -m pip install uWSGI==2.0.17.1
+		/home/uwsgi/bin/python -m pip install uwsgitop==0.11
+
+Setting up the uwsgi server
+
+uwsgi --socket 127.0.0.1:3031 --chdir /home/foobar/myproject/ --wsgi-file myproject/wsgi.py --master --processes 4 --threads 2 --stats 127.0.0.1:9191
+
+	This will spawn 4 processes (each with 2 threads), a master process (will respawn your processes when they die) and the HTTP router.
+		NOTE: Make some request to your app and then telnet to the port 9191, you’ll get lots of fun information. You may want to use “uwsgitop” (just pip install it), which is a top-like tool for monitoring instances. Bind the stats socket to a private address (unless you know what you are doing), otherwise everyone could access it!
+
+
+ common nginx config is the following
+ location / {
+    include uwsgi_params;
+    uwsgi_pass 127.0.0.1:3031;
+}
+uwsgi --socket 127.0.0.1:3031 --wsgi-file foobar.py --master --processes 4 --threads 2 --stats 127.0.0.1:9191
+
+
+pidfile
+	PID is written to a file too early. The value will be overwritten in case when app loading fails. The usual case is if the port is occupied by the running process, and if uwsgi is started for the second time the pidfile is overwritten even if the application fails to start, resulting a loss of original pid number.  This change will prevent the loss of a valid PID number.
+
+safe-pidfile
+	The safe-pidfile option works similar to pidfile but performs the write a little later in the loading process. This avoids overwriting the value when app loading fails, with the consequent loss of a valid PID number
+
+https://uwsgi-docs.readthedocs.io/en/latest/Options.html#
+
+emperor.ini -------------------
+
+[uwsgi]
+emperor = /spare/local/uwsgi/conf/vassals			; sets the path for vassals(which are basically uwsgi instances it will spawn) directory
+pidfile = /spare/tmp/%n_emperor.pid			; path to the pid file
+emperor-procname = uWSGI Emperor				; name of the emperor process
+vacuum = true ;  try to remove all of the generated file/sockets
+logto = /spare/local/towerportal/logs/uwsgi/emperor.log			; path to the logfile
+enable-threads = true			; enable support for python threads(https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#a-note-on-python-threads)
+die-on-term = true		; change the SIGTERM behaviour to standard Upstart behaviour of killing the process (https://uwsgi-docs.readthedocs.io/en/latest/ThingsToKnow.html#things-to-know-best-practices-and-issues-read-it)
+
+common_config ---------------------
+[uwsgi]
+uid = towerportal
+gid = systems_service
+listen = 100			; socket listen queue size
+socket-timeout = 600		; socket timeout period after which socket operation is closed
+socket-send-timeout = 600			; timeout for socket send operation
+chmod-socket = 666		; 
+buffer-size = 16384
+master = true			; enable the master process
+threads = 2			; no of threads per process
+harakiri = 600			; harakiri timer. It is a monitor (managed by the master process) that will destroy processes stuck for more than the specified number of seconds 
+vacuum = true
+die-on-term = true
+env = LANG=en_US.UTF-8
+auto-procname = true		; automatically set processes name to something meaningful<Paste>
+log-format = %(addr) - %(user) [%(ltime)] "%(method) %(uri) %(proto)" %(status) %(rsize) "%(referer)" "%(uagent)" %(micros)
+
+
+django.ini
+[uwsgi]
+ini = /spare/local/uwsgi/conf/vassals/common_config
+socket = /spare/tmp/%n.sock
+chdir = /spare/local/towerportal/tower
+safe-pidfile = /tmp/%n.pid
+wsgi-file = config/django.wsgi
+processes = 12
+max-requests = 10000		; Max no of request served by a worker after which it will be recycled
+max-requests-delta = 100		; delta to be added to value of max-requests
+virtualenv = /spare/local/towerportal/virtualenvs/portalvenv/
+logger = file:logfile=/spare/local/towerportal/logs/uwsgi/uwsgi.log,maxsize=100000000				; logger for uwsgi workers
+req-logger = file:logfile=/spare/local/towerportal/logs/uwsgi/uwsgi_request.log,maxsize=100000000			; logger for only request type messages
+stats = :9002			; for stats server
+stats-http = true
+

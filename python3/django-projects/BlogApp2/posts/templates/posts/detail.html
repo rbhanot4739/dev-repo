@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load render_post_elements %}
+
+{% block body %}
+
+    {% render_post_container obj %}
+
+    <a href="{% url 'post-update' obj.id %}" class="btn btn-info btn-sm mt-1">Edit</a>
+    <a href="{% url 'post-delete' obj.id %}" class="btn btn-sm btn-danger mt-1">Delete</a>
+
+{% endblock body %}

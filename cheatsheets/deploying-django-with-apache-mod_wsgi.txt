@@ -19,6 +19,7 @@
 
 		WSGIScriptAlias / /home/rbhanot/python-dotfiles/python3/django-projects/BlogProject/Project/wsgi.py
 		WSGIDaemonProcess blogproject python-home=/home/rbhanot/tools/miniconda3/envs/django-env python-path=/home/rbhanot/python-dotfiles/python3/django-projects/BlogProject
+		# WSGIDaemonProcess blogproject python-home=/home/rbhanot/tools/miniconda3/envs/django-env python-path=/home/rbhanot/python-dotfiles/python3/django-projects/BlogProject display-name=%{GROUP}
 		WSGIProcessGroup blogproject
 
 		ErrorLog ${APACHE_LOG_DIR}/error.log

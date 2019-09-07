@@ -1,0 +1,33 @@
+ $samplescript = <<-SCRIPT
+    sudo apt-get update
+    sudo apt-get install -y make gcc libc6-dev tcl
+    cp /vagrant/redis-5.0.5.tar.gz / && cd /
+    tar xzf redis-5.0.5.tar.gz
+    cd redis-5.0.5
+    make
+SCRIPT
+
+VAGRANTFILE_API_VERSION = "2"
+MASTER_NODE_COUNT=3
+MASTER_NODE_IP_START="10.0.0."
+
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "1024"
+    vb.cpus = "2"
+  end
+  config.vm.box = "ubuntu-18.04"
+  (1..MASTER_NODE_COUNT).each do |i|
+    config.vm.define "redis-master-#{i}" do |node|
+        node.vm.hostname = "redis-master-#{i}"
+        node.vm.network :private_network, ip: "#{MASTER_NODE_IP_START}#{ 10 + i }"
+        node.vm.network "forwarded_port", guest:6379, host: "#{6378 + i}"
+        node.vm.network "forwarded_port", guest:26379, host: "#{26378 + i}"
+        node.vm.synced_folder "~/vagrantDir", "/vagrant"
+        node.vm.provision "shell", inline: "echo 'cd /vagrant' >> ~/.bashrc && exit", privileged: false
+        node.vm.provision "shell", inline: $samplescript
+    end
+  end
+
+end

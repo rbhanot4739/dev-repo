@@ -1,0 +1,70 @@
+https://redis.io/topics/cluster-tutorial
+
+port 7000
+bind 172.31.160.110
+ 
+cluster-enabled yes
+cluster-config-file nodes.conf
+cluster-node-timeout 5000
+ 
+logfile redis.log
+loglevel notice
+ 
+save 60 100  # take data snapshots every 60 sec if 1000 keys changed at least
+rdbchecksum yes
+dbfilename dump.rdb
+appendonly yes
+ 
+
+# Setting up a redis cluster with Master-Master config
+
+	redis-cli --cluster create 10.0.0.11:6379 10.0.0.12:6379 10.0.0.13:6379 --cluster-replicas 1
+	  # option --cluster-replicas 1 means that we want a slave for every master created
+
+
+10.0.0.11:6379> cluster nodes
+0c8abb9e6d34f107c2a60467c7e8418fc063bf3b 10.0.0.12:6379@16379 master - 0 1567940993000 2 connected 5461-10922
+d8c76a8dc74c7f12dd5141e59eed1dd4176109c3 10.0.0.11:7000@17000 slave e12b5ed73778e2fb6f80d1d1b6cbb9a69cfc33fd 0 1567940993558 3 connected
+624b8c7e03d1a80c3cebc9ebb00517c1d75508cb 10.0.0.11:6379@16379 myself,master - 0 1567940994000 1 connected 0-5460
+e12b5ed73778e2fb6f80d1d1b6cbb9a69cfc33fd 10.0.0.13:6379@16379 master - 0 1567940994565 3 connected 10923-16383
+
+
+# Adding a slave node to cluster
+
+/redis-5.0.5$ sudo src/redis-cli --cluster create 10.0.0.11:6379 10.0.0.12:6379 10.0.0.13:6379
+
+>>> Performing hash slots allocation on 3 nodes...
+Master[0] -> Slots 0 - 5460
+Master[1] -> Slots 5461 - 10922
+Master[2] -> Slots 10923 - 16383
+M: 624b8c7e03d1a80c3cebc9ebb00517c1d75508cb 10.0.0.11:6379
+   slots:[0-5460] (5461 slots) master
+M: 0c8abb9e6d34f107c2a60467c7e8418fc063bf3b 10.0.0.12:6379
+   slots:[5461-10922] (5462 slots) master
+M: e12b5ed73778e2fb6f80d1d1b6cbb9a69cfc33fd 10.0.0.13:6379
+   slots:[10923-16383] (5461 slots) master
+Can I set the above configuration? (type 'yes' to accept): yes
+>>> Nodes configuration updated
+>>> Assign a different config epoch to each node
+>>> Sending CLUSTER MEET messages to join the cluster
+Waiting for the cluster to join
+..
+>>> Performing Cluster Check (using node 10.0.0.11:6379)
+M: 624b8c7e03d1a80c3cebc9ebb00517c1d75508cb 10.0.0.11:6379
+   slots:[0-5460] (5461 slots) master
+M: 0c8abb9e6d34f107c2a60467c7e8418fc063bf3b 10.0.0.12:6379
+   slots:[5461-10922] (5462 slots) master
+M: e12b5ed73778e2fb6f80d1d1b6cbb9a69cfc33fd 10.0.0.13:6379
+   slots:[10923-16383] (5461 slots) master
+[OK] All nodes agree about slots configuration.
+>>> Check for open slots...
+>>> Check slots coverage...
+[OK] All 16384 slots covered.
+
+## Deleting a node from cluster 
+
+redis-cli --cluster del-node 10.0.0.11:6379 d8c76a8dc74c7f12dd5141e59eed1dd4176109c3
+
+Manual failover
+connect to a cluster replica(slave) node
+	cluster failover

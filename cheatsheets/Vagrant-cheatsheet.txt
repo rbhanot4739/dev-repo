@@ -1,0 +1,40 @@
+https://linuxacademy.com/blog/linux/vagrant-cheat-sheet-get-started-with-vagrant/
+
+# Download vagrant box image 
+wget https://app.vagrantup.com/ubuntu/boxes/bionic64/versions/20190905.0.0/providers/virtualbox.box
+
+
+# Create vagrant base box from image
+vagrant box add ubuntu-18.04 virtualbox.box
+mkdir -p vagrantBoxes/box1
+cd vagrantBoxes/box1
+vagrant init --minimal # This will create the minial VagrantFile
+Update the VagrantFile like below
+		 $samplescript = <<-SCRIPT
+		 SCRIPT
+
+		Vagrant.configure("2") do |config|
+			config.vm.box = "ubuntu-18.04"
+			config.vm.hostname = "redis-master2"
+			config.vm.network "private_network", ip: "192.168.50.11"
+			config.vm.provision "shell", inline: $samplescript
+			config.vm.provider "virtualbox" do |vb|
+				vb.memory = "1024"
+				vb.cpus = "2"
+			end
+
+		end
+
+vagrant global-status # This will show all running boxes
+
+id       name    provider   state   directory                           
+------------------------------------------------------------------------
+62845da  default virtualbox running /home/rbhanot/vagrantDir/box1       
+b9f1ff6  default virtualbox running /home/rbhanot/vagrantDir/box2  
+
+
+vagrant ssh <VM-id> # to ssh to the VM
+vagrant halt/suspend <VM-id> # to stop the VM
+vagrant resume <VM-id> # to resume a halted/suspended machine
+vagrnat restart <VM-id>
+vagrant destroy <VM-id> # to completly delete a VM

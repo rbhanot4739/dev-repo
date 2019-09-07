@@ -1,0 +1,12 @@
+#!/usr/bin/expect -f
+
+set timeout 60
+
+set addr [lindex $argv 0]
+set login [lindex $argv 1]
+set pw [lindex $argv 2]
+
+spawn ssh $login@$addr {echo y | ssh-keygen -t rsa -f ~/.ssh/id_rsa -N "" > /dev/null}
+spawn ssh -t $login@$addr {ssh-copy-id rbhanot@rbhanotlinux.gurg-off}
+expect "*assword: " {send  "$pw\r"}
+expect eof

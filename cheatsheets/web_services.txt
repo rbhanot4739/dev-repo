@@ -1,0 +1,83 @@
+HEAD vs GET - HEAD is similar to GET except it won't send the message body, and returns just the metadata of the resource
+	So if all you need to know if a resource exists, how large is it, you can use GET
+
+
+OPTIONS - It basically gives the methods supported by the particular resource.
+
+
+
+REST : REpresentational State Transfer
+	- It is an architectural style for writing the web services.
+	- There are no strict specifications, no central body.
+	- It is a design principle.
+	- However there are certain constraints that a REST api must adhere.
+	- Works on HTTP
+	- Can send response as JSON, XML or even HTML
+
+REST Principles
+
+1.Uniform Interface
+	Resourece
+		- Everything is a resource, basically something you want to serve. Sometimes resource names are also called nouns
+			e.g Employee, Groups, Departments etc
+		- URI for these resources are called end points.
+	URI - Uniform Resource Indicator
+		- http://example.com:3000/configs/host
+
+	HTTP Verbs
+		- GET, PUT, POST, HEAD, DELETE, HEAD
+	
+2.Stateless
+	-	Server does not maintains any state of the client and client has to send a request which is complete entity in itself. Its because of the fact that HTTP in itself is Stateless
+	- Since there is no state management, the performance is usually better.
+
+3.Caching
+	- Caching is done on the client side.
+	- Cache-Control: max age
+		- this tells the client for how long in seconds the resource need to be cached. After this time expires the cache is invalidated. There is also something called ETag which is unique for a unique state of the resource, so let's say if the resource changes before the cache-control time, the cache will be invalidated since its etag has changed.
+	- Last-Modified : DateTime
+		- when the resource was last modified.
+
+	- Caching allows the server remains Stateless.
+
+4.Layering
+	- Layers like Proxies and Gateways. Proxy is on Client side and Gateway on the server
+	- There are also layers which does caching at their level.
+
+5.Code on Demand
+	- Response has the abiltiy to run some code on the client side like some JS.
+	- Extends the client.
+	- It is optional.
+
+Protocal
+	- Client Server
+	- Stateless - means State of the resource is not maintained across different requests
+	- Cacheble - Means responses can be cached using 'Cache-Control : max_age' headers
+	- Layered
+
+
+##############################################################
+SOAP - Simple Object Access Protocal
+	- This is more of a protocal that drives the web services need to be develpoed, there are strict set of rules/guidelines/standards laid down by W3C that need to be followed.
+	- Works usually on HTTP but can use SMTP or even FTP
+	- Responses are always XML
+
+WSDL - Web Serivce Description Language
+	- XML based interface for the web-service which provides information about functionalities and attributes of the Web service, which you can parse using tools and then make the request accordingly.
+
+UDDI - Universal Description Discovery Integraion
+	- It is a online service which holds the directory/registry of all the WSDL documents and where all the SOAP web service provider publish their WSDL documents and consumers can query these WSDLs.
+	- Once consumers have WSDL then they make use of the WSDL to make requests.
+
+
+Web serivces which follows rules/standards laid down by W3C for soap bases web services are Soap WS. 
+
+- Basic Rules
+	- SOAP message specification
+			- Message need to be in XML format and should have following components
+				- SOAP Envelop - <soap: Envelop>
+				- SOAP Header - <soap: header> - Contains the meta data information about the message and not the actual message.
+				- SOAP Body  - <soap: body>		- Actual data for the request.
+	- WSDL - Service providers must have defined WSDL for their WS.
+	- UDDI - Service providers need to submit their WSDL to UDDI
+- Some Extended standards and guidlines as well.

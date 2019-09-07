@@ -1,0 +1,16 @@
+#!/usr/bin/expect -f
+
+
+# for i in `get-cdp -_ systems%|egrep -v "old|windows|repo|oob|systemsdb|hostname"`; do ./ssh-key-copy.exp $i <USERNAME> <PASSOWRD >; done
+
+set timeout 60
+
+set addr [lindex $argv 0]
+set login [lindex $argv 1]
+set pw [lindex $argv 2]
+
+spawn ssh $login@$addr >/apps/nttech/rbhanot/.ssh/authorized_keys
+expect "*assword: " {send  "$pw\r"}
+spawn ssh-copy-id $login@$addr
+expect "*assword: " {send  "$pw\r"}
+expect eof

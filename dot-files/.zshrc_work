@@ -25,7 +25,7 @@ then
 	alias portal="cd /spare/ssd/rbhanot-data/python-projects/towerportal && source /spare/ssd/rbhanot-data/python-projects/venv/bin/activate"
 	alias sshp="ssh towerportal@systemsweb1.newark"
 	export GOPATH=/spare/ssd/rbhanot-data/go_projects
-	export MONGO=/spare/ssd/rbhanot-data/tools/mongodb-ubuntu
+	export MONGO=/spare/ssd/rbhanot-data/tools/mongodb
 	export LD_LIBRARY_PATH=/spare/ssd/rbhanot-data/tools/tmux/lib
 
 	 PATH=$GOPATH/bin:$MONGO/bin:/spare/ssd/rbhanot-data/tools/tmux/bin:$PATH

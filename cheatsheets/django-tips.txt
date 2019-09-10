@@ -1,0 +1,31 @@
+# Using Redis cluster instead of single Redis instance as Cache for django
+
+CACHES = {
+  'default': {
+    'BACKEND': 'django_redis.cache.RedisCache',
+    'LOCATION': 'redis://10.0.0.1:6379/0',
+    'OPTIONS': {
+      'REDIS_CLIENT_CLASS': 'rediscluster.RedisCluster',
+      'CONNECTION_POOL_CLASS': 'rediscluster.connection.ClusterConnectionPool',
+    }
+  }
+}
+
+
+Django aggregate and annotate
+	## Aggregate
+	In [36]: Circuit.objects.aggregate(avg_mrc=Avg('mrc'))
+	Out[36]: {'avg_mrc': 32613.198571}
+
+	In [37]: Circuit.objects.aggregate(Avg('mrc'))
+	Out[37]: {'mrc__avg': 32613.198571}
+
+ ## Annotate
+	In [45]: v = Vendor.objects.annotate(Count('circuit'))
+	In [46]: v[0].circuit__count
+	Out[46]: 2
+
+	In [47]: v = Vendor.objects.annotate(count_circuit=Count('circuit'))
+	In [49]: v[0].count_circuit
+	Out[49]: 2
+

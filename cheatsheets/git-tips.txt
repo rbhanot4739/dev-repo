@@ -105,3 +105,8 @@ git remote show origin
 
 -- Creating alias for git commands
 git config --global alias.co checkout
+
+
+git rev-parse --abbrev-ref HEAD # get branch name of current 
+git rev-parse  HEAD  # get commit has of current latest commit
+git rev-parse HEAD~6		# get commit has of the 6th last commit

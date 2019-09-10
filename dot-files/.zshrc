@@ -8,7 +8,7 @@ ENABLE_CORRECTION="false"
 
 # History Settings
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=5000
+HISTSIZE=50000
 SAVEHIST=$HISTSIZE
 
 setopt hist_ignore_all_dups # remove older duplicate entries from history
@@ -61,3 +61,4 @@ export PATH
 # zprof
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

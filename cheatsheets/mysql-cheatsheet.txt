@@ -25,3 +25,7 @@ select count(id) from sitedb_site;
 
 See constraints for a table
 	SHOW CREATE TABLE <tablename>\G
+
+
+alter table circuitdb_circuit drop foreign key circuitd_parent_tid_id_49aca5109ef726e0_fk_circuitdb_circuit_tid;
+alter table circuitdb_circuit drop circuitd_parent_tid_id_49aca5109ef726e0_fk_circuitdb_circuit_tid;

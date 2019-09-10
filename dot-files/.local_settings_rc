@@ -74,8 +74,10 @@ alias gbl='git branch -l'
 alias gd='git diff'
 alias gpl='git pull'
 alias gps='git push'
-alias gl='git log --pretty=oneline --decorate --graph'
-alias gla='git log --pretty=oneline --decorate --graph --all'
+alias gl='git log --pretty=oneline --decorate'
+# alias gl='git log --pretty=oneline --decorate --graph'
+alias gla='git log --pretty=oneline --decorate --all'
+# alias gla='git log --pretty=oneline --decorate --graph --all'
 alias gdf='git diff --name-status'
 
 alias gr='go run '
@@ -120,3 +122,6 @@ alias vf='vim $(fzf)'
 source $(which virtualenvwrapper.sh)
 # Add every binary that requires nvm, npm or node to run to an array of node globals
 #	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

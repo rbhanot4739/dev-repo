@@ -27,5 +27,26 @@ See constraints for a table
 	SHOW CREATE TABLE <tablename>\G
 
 
-alter table circuitdb_circuit drop foreign key circuitd_parent_tid_id_49aca5109ef726e0_fk_circuitdb_circuit_tid;
-alter table circuitdb_circuit drop circuitd_parent_tid_id_49aca5109ef726e0_fk_circuitdb_circuit_tid;
+	Delete a foreign key constraint - this is needed sometimes to delete foreign key columns
+	alter table circuitdb_circuit drop foreign key circuitd_parent_tid_id_49aca5109ef726e0_fk_circuitdb_circuit_tid;
+
+
+	Restoring a single table into database
+	Take dump for a single table from mysqldump.sql.gz
+		zcat lightweight-portaldump20190826.sql.gz| sed -n -e '/DROP TABLE.*`circuitdb_circuit`/,/UNLOCK TABLES/p' > circuitdb_circuit.sql
+
+Now restore the table into database
+	mysql -h rbhanotlinux.gurg-off -u root -p -D towerportal_dev < circuitdb_circuit.sql
+
+	if you get error like this
+	ERROR 1217 (23000) at line 1: Cannot delete or update a parent row: a foreign key constraint fails   
+	then run the following command from mysql shell
+	MySQL [towerportal_dev]> SET @@GLOBAL.FOREIGN_KEY_CHECKS=0;
+	
+	or you can run the same command from terminal as well
+	mysql -A -h rbhanotlinux.gurg-off -u root -p -D towerportal_dev -e "SET @@GLOBAL.FOREIGN_KEY_CHECKS=0;"
+
+	then re run the restore command
+		mysql -h rbhanotlinux.gurg-off -u root -p -D towerportal_dev < circuitdb_circuit.sql
+
+	Finally set the FOREIGN_KEY_CHECKS=1 using the same commands above

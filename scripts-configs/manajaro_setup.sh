@@ -43,7 +43,7 @@ then
 
 	echo -e "\n${YELLOW}..................... Installing packages .....................${NC}\n"
 
-	INSTALL_PACKAGES=" base-devel mod_wsgi apache python2-pip python-pip neovim unzip vuze nodejs npm vagrant"
+	INSTALL_PACKAGES=" base-devel mod_wsgi apache python2-pip python-pip neovim unzip vuze nodejs npm vagrant code"
 
 	for pkg in $INSTALL_PACKAGES;
 	do

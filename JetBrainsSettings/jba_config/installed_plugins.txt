@@ -1,20 +1,14 @@
 IdeaVIM
-codes.rudolph.idea.cfg
+Key Promoter X
 com.intellij.plugins.vscodekeymap
+com.jetbrains.plugins.ini4idea
 com.mallowigi
+com.markskelton.one-dark-theme
 com.mnw.tabmover
 io.github.qeesung.component.HighlightBracketPair
-izhangzhihao.rainbow.brackets
-org.toml.lang
-org.vayafulano.relativeLineNumbers
+mobi.hsz.idea.gitignore
 net.vektah.codeglance
-BashSupport
+org.jetbrains.plugins.go
+Pythonid
+org.toml.lang
 zielu.gittoolbox
-Key Promoter X
-com.godwin.json.parser
-GrepConsole
-com.samdark.intellij-visual-studio-code-dark-plus
-com.fernandojimenez.mattecarbon.theme
-io.eightpigs.intellij.darktheme
-com.arcticicestudio.nord.jetbrains
-com.4lex4.intellij.solarized

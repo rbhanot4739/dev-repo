@@ -4,7 +4,7 @@
     <property name="created">2019-05-30T16:42:16</property>
     <property name="ide">idea</property>
     <property name="ideVersion">2019.1.3.0.0</property>
-    <property name="modified">2019-08-01T19:29:11</property>
+    <property name="modified">2019-05-30T16:45:32</property>
     <property name="originalScheme">Dracula</property>
   </metaInfo>
   <console-font>
@@ -47,7 +47,7 @@
         <option name="FOREGROUND" value="f8f8f2" />
       </value>
     </option>
-    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="" />
+    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
     <option name="ANONYMOUS_CLASS_NAME_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="8be9fd" />

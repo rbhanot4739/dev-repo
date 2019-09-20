@@ -5,7 +5,7 @@ set history=10000                  " keep x lines of command line history
 set hlsearch                      " highlight search occurrences
 set ignorecase                    " ignore case in search patterns
 set smartcase                     " no ignore case when pattern is uppercase
-set smartjoin                     "join lines by removing spaces"
+set ideajoin                     "join lines by removing spaces"
 set incsearch                     " show search results while typing
 set relativenumber
 set wrapscan                      " searches wrap around the end of the file
@@ -24,36 +24,20 @@ let mapleader=" "
 nnoremap j gj
 nnoremap k gk
 
-nnoremap L g_
-nnoremap H _
+nnoremap H g_
+nnoremap L _
 nnoremap Y y$
-
-inoremap <c-s> <ESC>:w<CR>a
-" For seamless jumping b/w tags
-" c-] takes you the tag under the cursor, so c-[ to come back
-" nnoremap <c-[> <c-t>
-
-nnoremap ,o o<ESC>xk
-nnoremap ,O O<ESC>xj
 
 " Keep a block highlighted while shifting
 vnoremap < <gv
 vnoremap > >gv
 vnoremap = =gv
 
-" Bind <Space>h to remove highlight of your last search
-nnoremap <leader>h :nohl<CR>
-vnoremap <leader>h :nohl<CR>
-
 "--- Copy/Paste to system register
 nnoremap <Leader>y "*yy
 nnoremap <Leader>p "*p
 
-noremap <c-j> <c-w>j
-noremap <c-k> <c-w>k
-noremap <c-l> <c-w>l
-noremap <c-h> <c-w>h
-nmap <silent> <Esc> :nohl<CR>
+nnoremap <silent> <Esc> <Esc>:nohlsearch<CR><Esc>
 
 :command W w
 :command Q q
@@ -68,11 +52,6 @@ nnoremap <a-=> :action Unsplit<CR>
 inoremap <a--> <ESC>:action MoveTabDown<CR>
 inoremap <a-\> <ESC>:action MoveTabRight<CR>
 inoremap <a-=> <ESC>:action Unsplit<CR>
-nnoremap ,, :action ReformatCode<CR>
-nnoremap <leader>ff  :action Find<CR>
-nnoremap <leader>fr  :action Replace<CR>
-" nnoremap <leader>fp :action FindInPath<cr>
-" nnoremap <leader>rp :action ReplaceInPath<cr>
 nnoremap <leader>fu :action FindUsages<cr>
 nnoremap <leader>su :action ShowUsages<cr>
 nnoremap <leader>re :action RenameElement<cr>
@@ -91,6 +70,7 @@ nnoremap + :action EditorIncreaseFontSize<CR>
 nnoremap - :action EditorDecreaseFontSize<CR>
 nnoremap = :action EditorResetFontSize<CR>
 
-
+inoremap <C-Up> <ESC>:action EditorCloneCaretAbove<cr>a
+inoremap <C-Down> <ESC>:action EditorCloneCaretBelow<cr>a
 nnoremap <leader>, :action CloseEditor<CR>
 " nnoremap <leader>qq :action CloseAllEditors<CR>

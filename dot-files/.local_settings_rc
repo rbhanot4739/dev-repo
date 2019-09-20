@@ -125,3 +125,4 @@ source $(which virtualenvwrapper.sh)
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+VIRTUALENVWRAPPER_PYTHON=/usr/bin/python

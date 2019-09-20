@@ -28,12 +28,29 @@
   <action id="Diff.ShowDiff">
     <keyboard-shortcut first-keystroke="ctrl alt slash" />
   </action>
+  <action id="EditorAddOrRemoveCaret">
+    <mouse-shortcut keystroke="alt button1" />
+    <mouse-shortcut keystroke="shift control button1" />
+  </action>
   <action id="EditorCloneCaretAbove">
     <keyboard-shortcut first-keystroke="ctrl up" />
   </action>
   <action id="EditorCloneCaretBelow">
     <keyboard-shortcut first-keystroke="ctrl down" />
   </action>
+  <action id="EditorDownWithSelection" />
+  <action id="EditorDuplicate" />
+  <action id="EditorScrollDown">
+    <keyboard-shortcut first-keystroke="alt down" />
+  </action>
+  <action id="EditorScrollUp">
+    <keyboard-shortcut first-keystroke="alt up" />
+  </action>
+  <action id="EditorToggleColumnMode">
+    <mouse-shortcut keystroke="shift alt button1" />
+    <keyboard-shortcut first-keystroke="shift alt insert" />
+  </action>
+  <action id="EditorUpWithSelection" />
   <action id="ExpandAllRegions">
     <keyboard-shortcut first-keystroke="shift ctrl close_bracket" />
   </action>
@@ -58,12 +75,21 @@
   <action id="GotoFile">
     <keyboard-shortcut first-keystroke="ctrl y" />
   </action>
+  <action id="GotoTypeDeclaration" />
   <action id="HideSideWindows">
     <keyboard-shortcut first-keystroke="ctrl b" />
     <keyboard-shortcut first-keystroke="shift ctrl slash" />
   </action>
   <action id="JupyterSelectCellAboveAction" />
   <action id="JupyterSelectCellBelowAction" />
+  <action id="MoveLineDown">
+    <keyboard-shortcut first-keystroke="shift alt down" />
+  </action>
+  <action id="MoveLineUp">
+    <keyboard-shortcut first-keystroke="shift alt up" />
+  </action>
+  <action id="MoveStatementDown" />
+  <action id="MoveStatementUp" />
   <action id="MoveTabDown">
     <keyboard-shortcut first-keystroke="ctrl alt down" />
   </action>
@@ -85,7 +111,7 @@
     <keyboard-shortcut first-keystroke="shift ctrl q" />
   </action>
   <action id="RecentFiles">
-    <keyboard-shortcut first-keystroke="ctrl p" />
+    <keyboard-shortcut first-keystroke="ctrl e" />
   </action>
   <action id="ReformatCode">
     <keyboard-shortcut first-keystroke="shift alt f" />
@@ -107,6 +133,11 @@
     <keyboard-shortcut first-keystroke="alt left" />
   </action>
   <action id="SplitVertically" />
+  <action id="SwitcherRecentEditedChangedToggleCheckBox" />
+  <action id="Tree-selectPreviousExtendSelection" />
+  <action id="Vcs.ShowMessageHistory">
+    <keyboard-shortcut first-keystroke="ctrl m" />
+  </action>
   <action id="com.jetbrains.python.console.RunPythonConsoleAction">
     <keyboard-shortcut first-keystroke="alt 2" />
   </action>

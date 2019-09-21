@@ -43,7 +43,7 @@ then
 
 	echo -e "\n${YELLOW}..................... Installing packages .....................${NC}\n"
 
-	INSTALL_PACKAGES=" base-devel mod_wsgi apache python2-pip python-pip neovim unzip vuze nodejs npm vagrant code"
+	INSTALL_PACKAGES=" base-devel mod_wsgi apache python2-pip python-pip neovim unzip vuze nodejs npm vagrant"
 
 	for pkg in $INSTALL_PACKAGES;
 	do
@@ -157,6 +157,9 @@ then
 	git clone https://aur.archlinux.org/jetbrains-toolbox.git &&	cd jetbrains-toolbox/ &&	makepkg -s && echo $password |sudo -S pacman -U --noconfirm *xz && cd .. && rm -rf jetbrains-toolbox/
 
 
+	echo -e "\n${YELLOW}.....................  Installing VsCode from AUR .....................${NC}\n"
+	cd /tmp
+	git clone https://aur.archlinux.org/visual-studio-code-bin.git &&│·cd visual-studio-code-bin &&│·makepkg -s && echo $password |sudo -S pacman -U --noconfirm *xz && cd .. && rm -rf visual-studio-code-bin
 	echo -e "\n${YELLOW}.....................  Cleaning up Orphans & caches .....................${NC}\n"
 	echo $password |sudo -S pacman --noconfirm -Rs $(pacman -Qdtq)
 

@@ -71,7 +71,6 @@ cucumber-groovy
 cucumber-java
 gherkin
 hg4idea
-net.vektah.codeglance
 org.coffeescript
 org.intellij.grails
 org.intellij.intelliLang

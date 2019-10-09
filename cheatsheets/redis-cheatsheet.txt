@@ -29,9 +29,6 @@ d8c76a8dc74c7f12dd5141e59eed1dd4176109c3 10.0.0.11:7000@17000 slave e12b5ed73778
 e12b5ed73778e2fb6f80d1d1b6cbb9a69cfc33fd 10.0.0.13:6379@16379 master - 0 1567940994565 3 connected 10923-16383
 
 
-# Adding a slave node to cluster
-
-/redis-5.0.5$ sudo src/redis-cli --cluster create 10.0.0.11:6379 10.0.0.12:6379 10.0.0.13:6379
 
 >>> Performing hash slots allocation on 3 nodes...
 Master[0] -> Slots 0 - 5460
@@ -61,10 +58,22 @@ M: e12b5ed73778e2fb6f80d1d1b6cbb9a69cfc33fd 10.0.0.13:6379
 >>> Check slots coverage...
 [OK] All 16384 slots covered.
 
-## Deleting a node from cluster 
+# Adding a new master node to redis
+redis-cli --cluster add-node <new_node-ip> <ip of any existing redis-master>
+redis-cli --cluster add-node 127.0.0.1:7006 127.0.0.1:7000
 
+# Adding a slave node to cluster
+
+redis-cli --cluster add-node <new-slave's-IP> <ip of any existing-master> --cluster-slave 
+		- This will add the new slave as a replica to the master with less no of replicas or randomly if all masters have equal slaves
+redis-cli --cluster add-node <new-slave's-IP> <ip of any existing-master> --cluster-slave --cluster-master-id <id-of-redis-master>
+		- this will add the new slave to the particular redis master
+
+## Deleting a node from cluster 
+redis-cli --cluster add-node 127.0.0.1:7000 `<node-id>`
 redis-cli --cluster del-node 10.0.0.11:6379 d8c76a8dc74c7f12dd5141e59eed1dd4176109c3
 
 Manual failover
+redis-cli -p 7002 debug segfault - this will cause the redis instance to crash
 connect to a cluster replica(slave) node
 	cluster failover

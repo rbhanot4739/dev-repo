@@ -3,7 +3,6 @@ Key Promoter X
 com.intellij.plugins.vscodekeymap
 com.jetbrains.plugins.ini4idea
 com.mallowigi
-com.markskelton.one-dark-theme
 com.mnw.tabmover
 io.github.qeesung.component.HighlightBracketPair
 mobi.hsz.idea.gitignore
@@ -12,3 +11,4 @@ org.jetbrains.plugins.go
 Pythonid
 org.toml.lang
 zielu.gittoolbox
+color.scheme.Dark Blue Theme

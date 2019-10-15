@@ -97,6 +97,9 @@
     <keyboard-shortcut first-keystroke="ctrl k" second-keystroke="right" />
     <keyboard-shortcut first-keystroke="ctrl alt right" />
   </action>
+  <action id="NewFile">
+    <keyboard-shortcut first-keystroke="ctrl k" second-keystroke="ctrl n" />
+  </action>
   <action id="NextProjectWindow" />
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="ctrl page_down" />

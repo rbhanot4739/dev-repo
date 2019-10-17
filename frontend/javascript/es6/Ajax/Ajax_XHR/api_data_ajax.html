@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>API data with Ajax</title>
+</head>
+<body>
+<h3>ReqRes api data with Ajax</h3>
+<button type='submit' id='get-data'>Get Data</button>
+<button type='submit' id='post-data'>Post Data</button>
+
+<script type='text/javascript'>
+    const sendHttpRequest = (method, url, data) => {
+        return new Promise((resolve, reject) => {
+            let xhr = new XMLHttpRequest();
+            xhr.open(method, url);
+            if (data) {
+                xhr.setRequestHeader('Content-Type', 'application/json');
+            }
+            xhr.onload = () => {
+                const data = JSON.parse(xhr.response);
+                if (xhr.status !== 200) {
+                    reject(new Error(`Something went wrong with the request data \n ${xhr.response}`));
+                }
+                resolve(data);
+            };
+
+            xhr.onerror = () => {
+                reject(new Error('Something wrong happened'));
+            };
+
+            xhr.send(JSON.stringify(data));
+        });
+    };
+
+    document.getElementById('get-data').addEventListener('click', () => {
+        sendHttpRequest('GET', 'https://reqres.in/api/users')
+            .then(result => console.log(result));
+    });
+
+    document.getElementById('post-data').addEventListener('click', () => {
+        let data = {
+            'name': '',
+            'job': 'leader'
+        };
+        sendHttpRequest('POST', 'https://reqres.in/api/register', data)
+            .then(result => console.log(result))
+            .catch(error => console.log(error));
+    });
+
+</script>
+</body>
+</html>

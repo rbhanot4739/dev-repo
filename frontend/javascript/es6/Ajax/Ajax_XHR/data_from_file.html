@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax with XHR</title>
+</head>
+<body>
+<h3>Ajax with XHR (XMLHttpRequest)</h3>
+
+<button type="button">Get Data from Json File</button>
+
+<script type="text/javascript">
+    document.querySelector("button").addEventListener('click', loadData);
+
+    function loadData() {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'data.json', true);
+
+        xhr.onload = () => {
+            // console.log(xhr.readyState, xhr.status)
+            // console.log(xhr.response);
+            let data = JSON.parse(xhr.responseText);
+            console.log(`${data.fname} - ${data.lname}`);
+        };
+
+        xhr.send();
+    }
+</script>
+</body>
+</html>

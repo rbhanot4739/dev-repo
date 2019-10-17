@@ -30,7 +30,7 @@ then
 	echo $password | sudo -S sed -i -e '/Misc options/a Color\nILoveCandy'  /etc/pacman.conf
 
 	echo -e "\n${YELLOW}.....................  Removing some bloatware .....................${NC}\n"
-	REMOVE_PACKAGES="hplip  pidgin steam-manjaro steam-devices thunderbird ms-office-online libreoffice-still libreoffice-fresh gimp xfburn system-config-printer hexchat audacious audacious-plugins microsoft-office-online-jak xterm uget empathy lollypop brasero transmission"
+	REMOVE_PACKAGES="hplip  pidgin steam-manjaro steam-devices thunderbird ms-office-online libreoffice-still libreoffice-fresh gimp xfburn system-config-printer hexchat audacious audacious-plugins microsoft-office-online-jak xterm uget empathy lollypop brasero transmission evolution"
 	for pkg in $REMOVE_PACKAGES
 	do
 	echo $password | sudo -S pacman --noconfirm -Rsun  $pkg

@@ -1,29 +1,32 @@
 # https://github.com/pyenv/pyenv
 # https://github.com/pyenv/pyenv-virtualenv
 # https://github.com/pyenv/pyenv/blob/master/COMMANDS.md
+# https://realpython.com/intro-to-pyenv/
+# 
 
 
 Installing and setting up Pyenv
 	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-
-Activate pyenv by running the command
-	eval "$(pyenv init -)"
-
-Add the following lines to the .bash_profile, so that pyenv is initialized and loaded at shell startup.
-	export PYENV_ROOT="$HOME/.pyenv"
-	export PATH="$PYENV_ROOT/bin:$PATH"
-	eval "$(pyenv init -)"
 
 Now lets install pyenv-virtualenv plugin for creating/managing virtual envs
 	git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv 
 	$ ls .pyenv/plugins/
 		pyenv-virtualenv  python-build
 
-Enable the pyenv-virtualenv plugin.
-	eval "$(pyenv virtualenv-init -)"
+Or you can use below command to do all installs in one go
+	curl https://pyenv.run | bash
+
+Add the following lines to the .bash_profile, so that pyenv is initialized and loaded at shell startup.
+	export PYENV_ROOT="$HOME/.pyenv"
+	export PATH="$PYENV_ROOT/bin:$PATH"
+	if [ -d $PYENV_ROOT ]
+	then
+		eval "$(pyenv init -)"
+		eval "$(pyenv virtualenv-init -)"
+	fi
 
 Installing a python version with pyenv
-	pyenv install 2.7.12
+	pyenv install -v 2.7.12
 	[~]$ ll .pyenv/versions/
 	drwxr-xr-x 6 user group 4096 Sep  4 10:30 2.7.12
 
@@ -47,16 +50,12 @@ Now let's finally create the venv
 	[~]$ mkdir virtualenvs && cd virtualenvs/ && ln -s /home/user/.pyenv/versions/2.7.12/envs/djangoenv djangoenv && ll
 	lrwxrwxrwx 1 user group 63 Sep  4 10:40 djangoenv -> /home/user/.pyenv/versions/2.7.12/envs/djangoenv
 
-Update the .bash_profile as below
-	if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
-	source virtualenvs/djangovenv/bin/activate
-	export DJANGO_SETTINGS_MODULE='djangoproject.settings'
-	fi
-	export PYENV_ROOT="$HOME/.pyenv"
-	export PATH="$PYENV_ROOT/bin:$PATH"
-	eval "$(pyenv init -)"
 
 
 Finally run pyenv local --unset to deactivate the python2.7
 Exit the shell and login again
+
+pyenv global 3.7.2
+	This will make the python3.7.2 as the system default
+pyenv local 2.7.12
+	This will set the python version locally for a project directory, so you need to run this inside the project folder

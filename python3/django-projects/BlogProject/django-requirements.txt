@@ -8,7 +8,7 @@ certifi==2019.6.16
 chardet==3.0.4
 curtsies==0.3.0
 decorator==4.4.0
-Django==1.8
+Django==1.11.23
 django-crispy-forms==1.7.2
 flower==0.9.3
 greenlet==0.4.15

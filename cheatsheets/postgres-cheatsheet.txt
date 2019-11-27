@@ -1,0 +1,5 @@
+\l - list databases
+\dt - list tables
+\c - connect new db
+
+\x - enable extended display

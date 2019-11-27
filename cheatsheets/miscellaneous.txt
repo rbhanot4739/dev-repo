@@ -1,0 +1,6 @@
+GPG
+## Encrypting a tar
+tar -cz your_dir | gpg -c -o your_archive.tgz.gpg
+
+## Decrypting
+gpg -d your_archive.tgz.gpg | tar xz

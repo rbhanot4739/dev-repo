@@ -36,7 +36,7 @@ Now lets make the newly installed python2.7 in our current session
 	/home/user/.pyenv/versions/2.7.12/bin/python
 
 Now let's finally create the venv
-	[ ~]$ pyenv virtualenv djangovenv
+	[ ~]$ pyenv virtualenv djangovenv or pyenv virtualenv 3.7.4 djangoenv2
 	[ ~]$ pyenv virtualenvs
   2.7.12/envs/djangoenv (created from /home/user/.pyenv/versions/2.7.12)
   djangoenv (created from /home/user.pyenv/versions/2.7.12)

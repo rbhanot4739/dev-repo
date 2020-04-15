@@ -2,6 +2,7 @@
 # 1. Lookup is made in Data Descriptor if exists
 # 2. __dict__ of object is searched
 # 3. Non-Data descriptor is looked for attribute
+# 4. if it is not a valid attribute __getattr__ is invoked
 
 
 class DataDescriptor(object):

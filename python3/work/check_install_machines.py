@@ -19,8 +19,7 @@ from console_checker import serial_console_checker, SerialPasswordError, SerialE
 host_info = {}
 today = dt.today().strftime("%F")
 parm = base64.b64decode(
-    open('/spare/ssd/rbhanot/nvim/share/nvim/'
-         'runtime/lua/.config/.config.dat').read())
+    open('config.dat').read())
 
 
 def get_hosts(q):
@@ -31,7 +30,7 @@ def get_hosts(q):
     :return: host_info
     """
     global host_info
-    portal_url = "https://portal.tower-research.com/portal/api/v1/mapping"
+    portal_url = ""
     while not q.empty():
         site = q.get()
         host_and_site = ('{}.*{}'.format('install', site))
@@ -39,9 +38,9 @@ def get_hosts(q):
         query_string = [(
             'format',
             'json',
-        ), ('username', 'sysinfo-api'),
+        ), ('username', ''),
             ('api_key',
-             '1a41b5c74aaea7bfa81aefc028fc83ec6e69f12d'),
+             ''),
             ('limit', "500"), ('hostname__iregex', host_and_site)]
 
         query = OrderedDict(query_string)
@@ -91,12 +90,7 @@ def threaded_console_checker(q):
 
 def make_host_dict():
     threads = []
-    sites = ('asx', 'busan-sf', 'gurg-dc', 'gurg-off', 'hk', 'hk-off', 'jnx',
-             'jpn-maruya', 'jpx', 'jpx-sg', 'krx-kis', 'mumbai-bse',
-             'mumbai-dakc', 'mumbai-nse', 'mumbai-off', 'mumbai-tata',
-             'nebi-nse', 'nebi-tata', 'sgx', 'sing-off', 'syd-sy2', 'taifex',
-             'tkp', 'tokyo-ty3')
-    # sites = ('jpx',)
+    sites = ('')
     q = Queue()
     for i in sites:
         q.put(i)
@@ -113,7 +107,7 @@ def make_host_dict():
 def make_csv():
     global host_info
     global today
-    with open('/apps/nttech/rbhanot/installBox-reports/' + today + '.csv',
+    with open('' + today + '.csv',
               'w') as outputCsvFile:
         csv_writer = csv.writer(
             outputCsvFile, delimiter=",", quotechar='"', quoting=csv.QUOTE_ALL)
@@ -132,10 +126,10 @@ def send_mail():
     """
 
     # Email the generated csv file
-    from_add = 'rbhanot@tower-research.com'
-    to_add = ['seo-india@tower-research.com']
-    # to_add = ['rbhanot@tower-research.com']
-    cc_add = ['rbhanot@tower-research.com']
+    from_add = ''
+    to_add = ['']
+    # to_add = ['']
+    cc_add = [']
 
     msg = MIMEMultipart()
     msg['From'] = from_add

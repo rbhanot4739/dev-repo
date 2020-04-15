@@ -41,11 +41,14 @@ class Rectangle(object):
         self.length = x
         self.height = y
 
+    def __getattr__(self, item):
+        return f"{self}.{item} does not exist ==> __getattr__ invoked"
+
 obj = Rectangle(22, 33)
 print(obj.breadth)
 print(obj.length)
 print(obj.height)
 obj.__dict__['breadth'] = 300
 print("fetched from obj.__dict__", obj.breadth, "")
+print(obj.fake_attr)
 print(obj.__dict__)
-

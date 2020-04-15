@@ -1,6 +1,3 @@
-import sys
-
-
 # Attribute lookup order
 # 1. Lookup is made in Data Descriptor if exists
 # 2. __dict__ of object is searched
@@ -14,7 +11,7 @@ class DataDescriptor(object):
 
     def __get__(self, instance, owner):
         print('Getting the value of', self.attribute,
-              '__get__ of Data descriptor invoked')
+              '> __get__ of Data descriptor invoked > val = ', end='')
         return instance.__dict__.get(self.attribute, self.default)
 
     def __set__(self, instance, value=200):
@@ -22,7 +19,7 @@ class DataDescriptor(object):
             print('__set__ of Data descriptor invoked')
             instance.__dict__[self.attribute] = value
         else:
-            sys.exit('Negative value not allowed')
+            raise ValueError('Negative value not allowed')
 
 
 class NonDataDescriptor(object):
@@ -32,8 +29,7 @@ class NonDataDescriptor(object):
 
     def __get__(self, instance, owner):
         print('Getting the value of', self.attribute,
-              '__get__ of Non-Data descriptor invoked')
-        instance.__dict__[self.attribute] = self.default
+              '> __get__ of Non-Data descriptor invoked > val = ', end='')
         return instance.__dict__.get(self.attribute, self.default)
 
 
@@ -41,10 +37,15 @@ class Rectangle(object):
     length = DataDescriptor("length")
     breadth = NonDataDescriptor("breadth")
 
+    def __init__(self, x, y):
+        self.length = x
+        self.height = y
 
-obj = Rectangle()
-print(obj.length)
+obj = Rectangle(22, 33)
 print(obj.breadth)
+print(obj.length)
+print(obj.height)
+obj.__dict__['breadth'] = 300
+print("fetched from obj.__dict__", obj.breadth, "")
+print(obj.__dict__)
 
-print(obj.length)
-print(obj.breadth)

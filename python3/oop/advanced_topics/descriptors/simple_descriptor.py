@@ -25,8 +25,6 @@ class Positive:
 
 
 class Rectangle:
-    # Descriptors objects are created at class level to make sure that __set__
-    # executed on class's object initialization as well.
     length = Positive()
     breadth = Positive()
 
@@ -34,26 +32,22 @@ class Rectangle:
         self.length = len_val
         self.breadth = bre_val
 
-    @property
-    def area(self):
-        return self.length * self.breadth
-
 
 r1 = Rectangle(10, 20)
-print('***** Rectangle Obj2 created *****')
-print('r1(Length = {}, breadth = {}, area = {})'.format(r1.length, r1.breadth,
-                                                        r1.area))
+print('***** Rectangle Obj1 created *****')
+print('r1(Length = {}, breadth = {})'.format(r1.length, r1.breadth))
 r2 = Rectangle(100, 200)
 print('***** Rectangle Obj2 created *****')
-print('r2(Length = {}, breadth = {}, area = {})'.format(r2.length, r2.breadth,
-                                                        r2.area))
-print('r1(Length = {}, breadth = {}, area = {})'.format(r1.length, r1.breadth,
-                                                        r1.area))
+print('r2(Length = {}, breadth = {})'.format(r2.length, r2.breadth))
+print('r1(Length = {}, breadth = {})'.format(r1.length, r1.breadth))
 
 
 class NonNegative:
 
     def __init__(self):
+        # we are using a weakkey dictionary here rather than a regular dict because weakkey dict will be
+        # automatically garbage collected once all the keys in it are deleted and keys in this dict will be instances
+        # of the class where descriptor is initialized
         self.instances = WeakKeyDictionary()
 
     def __get__(self, instance, owner):
@@ -71,24 +65,16 @@ class NonNegative:
 class Cube(object):
     length = NonNegative()
     breadth = NonNegative()
-    height = NonNegative()
 
-    def __init__(self, value1, value2, value3):
+    def __init__(self, value1, value2):
         self.length = value1
         self.breadth = value2
-        self.height = value3
 
 
-c1 = Cube(20, 10, 50)
+c1 = Cube(20, 10)
 print('\n***** Cube Obj1 created *****')
-print(
-    'c1(Length = {}, breadth = {}, height = {})'.format(c1.length, c1.breadth,
-                                                        c1.height))
-c2 = Cube(30, 40, 80)
+print('c1(Length = {}, breadth = {})'.format(c1.length, c1.breadth))
+c2 = Cube(30, 40)
 print('***** Cube Obj2 created *****')
-print(
-    'c2(Length = {}, breadth = {}, height = {})'.format(c2.length, c2.breadth,
-                                                        c2.height))
-print(
-    'c1(Length = {}, breadth = {}, height = {})'.format(c1.length, c1.breadth,
-                                                        c1.height))
+print('c2(Length = {}, breadth = {})'.format(c2.length, c2.breadth))
+print('c1(Length = {}, breadth = {})'.format(c1.length, c1.breadth))

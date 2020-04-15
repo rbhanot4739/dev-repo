@@ -52,7 +52,7 @@ def serial_console_checker(host=None, pwd=None):
         child.expect('')
         child.sendline()
         time.sleep(2)
-        exp = child.expect(['Password:', '.*tower-research.com login:', ':~#'])
+        exp = child.expect(['Password:', ' login:', ':~#'])
         if exp == 0:
             raise SerialPasswordError
         else:

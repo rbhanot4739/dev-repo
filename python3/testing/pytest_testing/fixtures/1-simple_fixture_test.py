@@ -19,7 +19,8 @@ def test_2(simple_fixture):
     assert 'One' == 'One'
 
 
-# You can also use `usefixtures` marker to use the fixture, this way you don't have to pass the fixture to function, this is ideal for classes
+# You can also use `usefixtures` marker to use the fixture, this way you don't have to pass the fixture to function
+# this is ideal for classes
 @pytest.mark.usefixtures('simple_fixture')
 def test_3():
     print('Test3')

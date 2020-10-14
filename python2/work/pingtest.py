@@ -23,15 +23,13 @@ def get_hosts():
     portal_url = "https://portal.tower-research.com/portal/api/v1/"
     rack_db_mapping = "mapping"
     host_info = dict()
-    sites = ('asx', 'busan-sf', 'gurg-dc', 'gurg-off', 'hk', 'hk-off', 'jnx', 'jpn-maruya', 'jpx', 'jpx-sg', 'krx-kis',
-             'mumbai-bse', 'mumbai-dakc', 'mumbai-nse', 'mumbai-off', 'mumbai-tata', 'nebi-nse', 'nebi-tata', 'sgx',
-             'sing-off', 'syd-sy2', 'taifex', 'tkp', 'tokyo-ty3')
+    sites = ()
 
     for site in sites:
         host_and_site = ('{}.*{}'.format('install', site)).replace('%', '.*')
 
-        query_string = [('format', 'json',), ('username', 'sysinfo-api'),
-                        ('api_key', '1a41b5c74aaea7bfa81aefc028fc83ec6e69f12d'), ('limit', "500"),
+        query_string = [('format', 'json',), ('username', ''),
+                        ('api_key', ''), ('limit', "500"),
                         ('hostname__iregex', host_and_site)]
 
         query = OrderedDict(query_string)
@@ -74,10 +72,10 @@ def send_mail():
     get_unreachable_hosts()
 
     # Email the generated csv file
-    from_add = 'rbhanot@tower-research.com'
-    to_add = ['seo-india@tower-research.com']
-    # to_add = ['rbhanot@tower-research.com']
-    cc_add = ['rbhanot@tower-research.com']
+    from_add = 'rbhanot@'
+    to_add = ['']
+    # to_add = ['rbhanot@']
+    cc_add = ['rbhanot@']
 
     msg = MIMEMultipart()
     msg['From'] = from_add

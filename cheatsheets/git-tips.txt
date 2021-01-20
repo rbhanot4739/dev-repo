@@ -1,3 +1,10 @@
+NOTE: If you put `--` i.e two dashes after the actual git command/subcommand it will impact only that file. This pretty special and can be handy in lot of cases
+Examples
+git checkout <branch/commit> -- filename : Checkout only this particular file from the branch/commit
+git log -- filename : Show only those log enteries which contain this filename
+git diff -- filename : show git diff only for this file.
+This list can go on...
+
 1. git diff - 
 			shows only the unstaged changes
 		- Once the changes have been staged, git diff won't show it

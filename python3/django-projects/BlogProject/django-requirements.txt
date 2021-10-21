@@ -1,5 +1,5 @@
 amqp==2.5.0
-Babel==2.7.0
+Babel==2.9.1
 backcall==0.1.0
 billiard==3.6.0.0
 blessings==1.7

@@ -1,6 +1,6 @@
 amqp==2.5.0
 billiard==3.6.0.0
-celery==4.3.0
+celery==5.2.2
 certifi==2019.6.16
 Django==1.8
 django-crispy-forms==1.7.2

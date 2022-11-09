@@ -60,8 +60,7 @@ class Uppercase(Descriptor):
 
     def __set__(self, instance, value):
         if isinstance(value, str):
-            instance.__dict__[self.attr_name] = ' '.join(
-                [i.capitalize() for i in value.split()])
+            instance.__dict__[self.attr_name] = value.upper()
         else:
             raise TypeError("{}.{} need to be a"
                             " string".format(instance.__class__.__name__,

@@ -2,18 +2,18 @@ from weakref import WeakKeyDictionary
 
 
 class Positive:
+    """
+     ===== Problem with this descriptor=====
+    Because we are storing the value in descriptor instance, this will
+    cause all instances of the owner class to share the value. To test
+    create multiple objects of the owner class and then see if value in
+    object affects other.
+    You can also inspect __dict__ of Positive's instance in owner
+    class through manual debugging
 
-    # Problem 1
-    # Because we are storing the value in descriptor instance, this will
-    # cause all instances of the owner class to share the value. To test
-    # create multiple objects of the owner class and then see if value in
-    # object affects other.
-    # You can also inspect __dict__ of Positive's instance in owner
-    # class through manual debugging
-
-    # To solve this we need to store the attribute values of an instance
-    # in its own separate dictionary inside the descriptor
-
+    To solve this we need to store the attribute values of an instance
+    in its own separate dictionary inside the descriptor
+    """
     def __get__(self, instance, owner):
         return self.value
 
@@ -43,11 +43,18 @@ print('r1(Length = {}, breadth = {})'.format(r1.length, r1.breadth))
 
 
 class NonNegative:
+    """
+    While this version improves on the previous one by using a weak key dict, but this 
+    also one major drawback which is that we are storing the values in the descriptor not
+    on the actual owner class instance where it actually belongs    
+    
+    """
 
     def __init__(self):
         # we are using a weakkey dictionary here rather than a regular dict because weakkey dict will be
         # automatically garbage collected once all the keys in it are deleted and keys in this dict will be instances
-        # of the class where descriptor is initialized
+        # of the class where descriptor is initialized and once the instances go out of scope, this weak key dict will also
+        # out of scope, this won't happen for a regualr dict.
         self.instances = WeakKeyDictionary()
 
     def __get__(self, instance, owner):

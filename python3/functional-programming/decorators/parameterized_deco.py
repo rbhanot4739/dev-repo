@@ -46,7 +46,7 @@ def deco(f=None, /, *, repeat=3):
   
   
   # Usage
-  @deco
+@deco
 def greet(name):
     return f"Hi {name} !"
     
